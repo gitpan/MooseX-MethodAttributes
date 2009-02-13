@@ -1,0 +1,12 @@
+Changes
+LICENSE
+MANIFEST
+META.yml
+Makefile.PL
+README
+lib/MooseX/MethodAttributes.pm
+lib/MooseX/MethodAttributes/Role/AttrContainer.pm
+lib/MooseX/MethodAttributes/Role/Meta/Class.pm
+lib/MooseX/MethodAttributes/Role/Meta/Method.pm
+t/basic.t
+t/lib/TestClass.pm
