@@ -5,8 +5,15 @@ META.yml
 Makefile.PL
 README
 lib/MooseX/MethodAttributes.pm
+lib/MooseX/MethodAttributes/Inheritable.pm
 lib/MooseX/MethodAttributes/Role/AttrContainer.pm
+lib/MooseX/MethodAttributes/Role/AttrContainer/Inheritable.pm
 lib/MooseX/MethodAttributes/Role/Meta/Class.pm
 lib/MooseX/MethodAttributes/Role/Meta/Method.pm
+lib/MooseX/MethodAttributes/Role/Meta/Method/MaybeWrapped.pm
+lib/MooseX/MethodAttributes/Role/Meta/Method/Wrapped.pm
 t/basic.t
+t/inherited.t
+t/lib/BaseClass.pm
+t/lib/SubClass.pm
 t/lib/TestClass.pm
