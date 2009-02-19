@@ -9,7 +9,7 @@ WriteMakefile(
   NAME      => 'MooseX::MethodAttributes',
   AUTHOR    => 'Florian\ Ragwitz\ \<rafl\@debian\.org\>',
   ABSTRACT  => 'code attribute introspection',
-  VERSION   => '0.02',
+  VERSION   => '0.03',
   EXE_FILES => [ qw() ],
   (eval { ExtUtils::MakeMaker->VERSION(6.21) } ? (LICENSE => 'perl') : ()),
   PREREQ_PM    => {

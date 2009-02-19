@@ -1,23 +1,32 @@
 package MooseX::MethodAttributes::Role::Meta::Class;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 # ABSTRACT: metaclass role for storing code attributes
 
 use Moose::Role;
-use MooseX::Types::Moose qw/HashRef/;
+use Moose::Util qw/find_meta/;
+use MooseX::Types::Moose qw/HashRef ArrayRef Str Int/;
 
 use namespace::clean -except => 'meta';
 
 has _method_attribute_map => (
-    is => 'ro',
-    isa => HashRef,
-    lazy => 1,
-    default => sub { +{} },
+    is        => 'ro',
+    isa       => HashRef[ArrayRef[Str]],
+    lazy      => 1,
+    default   => sub { +{} },
+);
+
+has _method_attribute_list => (
+    is      => 'ro',
+    isa     => ArrayRef[Int],
+    lazy    => 1,
+    default => sub { [] },
 );
 
 
 sub register_method_attributes {
     my ($self, $code, $attrs) = @_;
+    push @{ $self->_method_attribute_list }, 0 + $code;
     $self->_method_attribute_map->{ 0 + $code } = $attrs;
     return;
 }
@@ -26,6 +35,45 @@ sub register_method_attributes {
 sub get_method_attributes {
     my ($self, $code) = @_;
     return $self->_method_attribute_map->{ 0 + $code };
+}
+
+
+sub get_method_with_attributes_list {
+    my ($self) = @_;
+    my @methods = values %{ $self->get_method_map };
+    my %order;
+
+    {
+        my $i = 0;
+        $order{$_} = $i++ for @{ $self->_method_attribute_list };
+    }
+
+    return map {
+        $_->[1]
+    } sort {
+        $order{ $a->[0] } <=> $order{ $b->[0] }
+    } map {
+        my $addr = 0 + $_->_get_attributed_coderef;
+        exists $self->_method_attribute_map->{$addr}
+            ? [$addr, $_]
+            : ()
+    } grep { $_->can('_get_attributed_coderef') } @methods;
+}
+
+
+sub get_all_methods_with_attributes {
+    my ($self) = @_;
+    my %seen;
+
+    return reverse grep {
+        !$seen{ $_->name }++
+    } reverse map {
+        my $meth;
+        my $meta = find_meta($_);
+        ($meta && ($meth = $meta->can('get_method_with_attributes_list')))
+            ? $meta->$meth
+            : ()
+    } reverse $self->linearized_isa
 }
 
 1;
@@ -37,7 +85,7 @@ MooseX::MethodAttributes::Role::Meta::Class - metaclass role for storing code at
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 METHODS
 
@@ -50,6 +98,21 @@ Register a list of attributes for a code reference.
 =head2 get_method_attributes ($code)
 
 Get a list of attributes associated with a coderef.
+
+
+
+=head2 get_method_with_attributes_list
+
+Gets the list of meta methods for local methods of this class that have
+attributes in the order they have been registered.
+
+
+
+=head2 get_all_methods_with_attributes
+
+Gets the list of meta methods of local and inherited methods of this class,
+that have attributes. Baseclass methods come before subclass methods. Methods
+of one class have the order they have been declared in.
 
 =head1 AUTHOR
 

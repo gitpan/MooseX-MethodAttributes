@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Method::Wrapped;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 # ABSTRACT: wrapped metamethod role allowing code attribute introspection
 
@@ -13,6 +13,11 @@ sub attributes {
     return $self->get_original_method->attributes;
 }
 
+sub _get_attributed_coderef {
+    my ($self) = @_;
+    return $self->get_original_method->_get_attributed_coderef;
+}
+
 1;
 
 __END__
@@ -22,7 +27,7 @@ MooseX::MethodAttributes::Role::Meta::Method::Wrapped - wrapped metamethod role 
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 METHODS
 

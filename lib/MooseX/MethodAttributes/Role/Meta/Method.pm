@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Method;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 # ABSTRACT: metamethod role allowing code attribute introspection
 
@@ -17,7 +17,12 @@ has attributes => (
 
 sub _build_attributes {
     my ($self) = @_;
-    return $self->associated_metaclass->get_method_attributes($self->body);
+    return $self->associated_metaclass->get_method_attributes($self->_get_attributed_coderef);
+}
+
+sub _get_attributed_coderef {
+    my ($self) = @_;
+    return $self->body;
 }
 
 1;
@@ -29,7 +34,7 @@ MooseX::MethodAttributes::Role::Meta::Method - metamethod role allowing code att
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 ATTRIBUTES
 
