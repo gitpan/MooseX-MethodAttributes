@@ -2,13 +2,15 @@ use strict;
 use warnings;
 
 package BaseClass;
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 use Moose;
 BEGIN { extends qw/MooseX::MethodAttributes::Inheritable/; }
 
 sub moo : Moo {}
+
+sub affe : Birne {}
 
 sub foo : Foo {}
 

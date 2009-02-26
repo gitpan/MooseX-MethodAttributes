@@ -7,6 +7,6 @@ license: perl
 name: MooseX-MethodAttributes
 requires: 
   Moose: 0.70
-  MooseX::Types::Moose: 0
+  MooseX::Types: 0.06
   namespace::clean: 0
-version: 0.03
+version: 0.04
