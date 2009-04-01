@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Class;
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 # ABSTRACT: metaclass role for storing code attributes
 
@@ -85,7 +85,7 @@ MooseX::MethodAttributes::Role::Meta::Class - metaclass role for storing code at
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 METHODS
 

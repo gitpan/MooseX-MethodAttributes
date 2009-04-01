@@ -9,4 +9,4 @@ requires:
   Moose: 0.70
   MooseX::Types: 0.06
   namespace::clean: 0
-version: 0.04
+version: 0.05

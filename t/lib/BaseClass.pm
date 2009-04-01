@@ -1,12 +1,25 @@
 use strict;
 use warnings;
 
+package BaseClass::Meta::Role;
+our $VERSION = '0.05';
+
+use Moose::Role;
+
 package BaseClass;
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 
 use Moose;
-BEGIN { extends qw/MooseX::MethodAttributes::Inheritable/; }
+use Moose::Util::MetaRole;
+BEGIN { 
+    Moose::Util::MetaRole::apply_metaclass_roles(
+        for_class => __PACKAGE__,
+        metaclass_roles => [qw/ BaseClass::Meta::Role /],
+    );
+
+    extends qw/MooseX::MethodAttributes::Inheritable/;
+}
 
 sub moo : Moo {}
 
