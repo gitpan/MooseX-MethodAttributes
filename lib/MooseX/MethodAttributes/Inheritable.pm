@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Inheritable;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 # ABSTRACT: inheritable code attribute introspection
 
@@ -21,7 +21,7 @@ MooseX::MethodAttributes::Inheritable - inheritable code attribute introspection
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -29,7 +29,7 @@ version 0.05
     use base qw/MooseX::MethodAttributes::Inheritable/;
 
     package SubClass;
-    use base qw/SubClass/;
+    use base qw/BaseClass/;
 
     sub foo : Bar {}
 
@@ -41,9 +41,10 @@ This module does the same as C<MooseX::MethodAttributes>, except that classes
 inheriting from other classes using it don't need to do anything special to get
 their code attributes captured.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
   Florian Ragwitz <rafl@debian.org>
+  Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 

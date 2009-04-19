@@ -1,12 +1,13 @@
 use strict;
 use warnings;
 
-package SubClass;
+package SubClassMoosed;
 our $VERSION = '0.06';
 
 
+use base qw/BaseClass/;
+
 use Moose;
-BEGIN { extends 'BaseClass'; }
 
 sub bar : Bar {}
 

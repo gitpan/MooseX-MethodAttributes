@@ -19,5 +19,6 @@ t/inherited_non_moose_multilevel.t
 t/lib/BaseClass.pm
 t/lib/OtherSubClass.pm
 t/lib/SubClass.pm
+t/lib/SubClassMoosed.pm
 t/lib/SubSubClass.pm
 t/lib/TestClass.pm

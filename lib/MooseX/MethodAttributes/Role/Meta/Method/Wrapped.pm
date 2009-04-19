@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Method::Wrapped;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 # ABSTRACT: wrapped metamethod role allowing code attribute introspection
 
@@ -27,7 +27,7 @@ MooseX::MethodAttributes::Role::Meta::Method::Wrapped - wrapped metamethod role 
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 METHODS
 
@@ -35,9 +35,10 @@ version 0.05
 
 Gets the list of code attributes of the original method this meta method wraps.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
   Florian Ragwitz <rafl@debian.org>
+  Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::AttrContainer::Inheritable;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 # ABSTRACT: capture code attributes in the automatically initialized metaclass instance
 
@@ -15,7 +15,11 @@ with 'MooseX::MethodAttributes::Role::AttrContainer';
 before MODIFY_CODE_ATTRIBUTES => sub {
     my ($class) = @_;
     my $meta = find_meta($class);
-    return if $meta && does_role($meta, 'MooseX::MethodAttributes::Role::Meta::Class');
+
+    return if $meta
+        && does_role($meta, 'MooseX::MethodAttributes::Role::Meta::Class')
+        && does_role($meta->method_metaclass, 'MooseX::MethodAttributes::Role::Meta::Method');
+
     Moose->init_meta( for_class => $class )
         unless $meta;
     Moose::Util::MetaRole::apply_metaclass_roles(
@@ -35,7 +39,7 @@ MooseX::MethodAttributes::Role::AttrContainer::Inheritable - capture code attrib
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 DESCRIPTION
 
@@ -43,9 +47,10 @@ This role extends C<MooseX::MethodAttributes::Role::AttrContainer> with the
 functionality of automatically initializing a metaclass for the caller and
 applying the meta roles relevant for capturing method attributes.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
   Florian Ragwitz <rafl@debian.org>
+  Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 

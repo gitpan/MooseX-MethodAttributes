@@ -1,5 +1,5 @@
 package TestClass;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 
 use Moose;
@@ -10,7 +10,7 @@ sub foo : SomeAttribute AnotherAttribute('with argument') {}
 after foo => sub {};
 
 package SubClass;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 
 use Moose;

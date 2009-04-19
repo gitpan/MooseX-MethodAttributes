@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Class;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 # ABSTRACT: metaclass role for storing code attributes
 
@@ -85,7 +85,7 @@ MooseX::MethodAttributes::Role::Meta::Class - metaclass role for storing code at
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 METHODS
 
@@ -114,9 +114,10 @@ Gets the list of meta methods of local and inherited methods of this class,
 that have attributes. Baseclass methods come before subclass methods. Methods
 of one class have the order they have been declared in.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
   Florian Ragwitz <rafl@debian.org>
+  Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 

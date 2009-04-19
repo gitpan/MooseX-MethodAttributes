@@ -2,17 +2,17 @@ use strict;
 use warnings;
 
 package BaseClass::Meta::Role;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use Moose::Role;
 
 package BaseClass;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 
 use Moose;
 use Moose::Util::MetaRole;
-BEGIN { 
+BEGIN {
     Moose::Util::MetaRole::apply_metaclass_roles(
         for_class => __PACKAGE__,
         metaclass_roles => [qw/ BaseClass::Meta::Role /],

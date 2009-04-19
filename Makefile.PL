@@ -7,9 +7,9 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
   DISTNAME  => 'MooseX-MethodAttributes',
   NAME      => 'MooseX::MethodAttributes',
-  AUTHOR    => 'Florian\ Ragwitz\ \<rafl\@debian\.org\>',
+  AUTHOR    => 'Florian\ Ragwitz\ \<rafl\@debian\.org\>\,\ Tomas\ Doran\ \<bobtfish\@bobtfish\.net\>',
   ABSTRACT  => 'code attribute introspection',
-  VERSION   => '0.05',
+  VERSION   => '0.06',
   EXE_FILES => [ qw() ],
   (eval { ExtUtils::MakeMaker->VERSION(6.21) } ? (LICENSE => 'perl') : ()),
   PREREQ_PM    => {

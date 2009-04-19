@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Method;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 # ABSTRACT: metamethod role allowing code attribute introspection
 
@@ -34,7 +34,7 @@ MooseX::MethodAttributes::Role::Meta::Method - metamethod role allowing code att
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 ATTRIBUTES
 
@@ -51,9 +51,10 @@ Gets the list of code attributes of the method represented by this meta method.
 Builds the value of the C<attributes> attribute based on the attributes
 captured in the associated meta class.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
   Florian Ragwitz <rafl@debian.org>
+  Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
