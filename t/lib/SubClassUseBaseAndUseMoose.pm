@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 
-package SubClassMoosed;
-our $VERSION = '0.06';
+package SubClassUseBaseAndUseMoose;
+our $VERSION = '0.07';
 
 
 use base qw/BaseClass/;

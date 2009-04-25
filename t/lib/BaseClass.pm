@@ -2,12 +2,12 @@ use strict;
 use warnings;
 
 package BaseClass::Meta::Role;
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 use Moose::Role;
 
 package BaseClass;
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 
 use Moose;
@@ -23,7 +23,14 @@ BEGIN {
 
 sub moo : Moo {}
 
-sub affe : Birne {}
+{
+    my $affe_was_run = 0;
+
+    sub affe : Birne { $affe_was_run++; }
+
+    sub no_calls_to_affe { $affe_was_run }
+
+}
 
 sub foo : Foo {}
 

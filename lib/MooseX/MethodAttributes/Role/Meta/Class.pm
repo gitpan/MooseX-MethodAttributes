@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Class;
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 # ABSTRACT: metaclass role for storing code attributes
 
@@ -34,7 +34,7 @@ sub register_method_attributes {
 
 sub get_method_attributes {
     my ($self, $code) = @_;
-    return $self->_method_attribute_map->{ 0 + $code };
+    return $self->_method_attribute_map->{ 0 + $code } || [];
 }
 
 
@@ -76,7 +76,17 @@ sub get_all_methods_with_attributes {
     } reverse $self->linearized_isa
 }
 
+
+sub get_nearest_methods_with_attributes {
+    my ($self) = @_;
+    
+    grep { 
+        scalar @{ $self->find_method_by_name($_->name)->attributes }
+    } $self->get_all_methods_with_attributes;
+}
+
 1;
+
 
 __END__
 =head1 NAME
@@ -85,7 +95,7 @@ MooseX::MethodAttributes::Role::Meta::Class - metaclass role for storing code at
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 METHODS
 
@@ -113,6 +123,28 @@ attributes in the order they have been registered.
 Gets the list of meta methods of local and inherited methods of this class,
 that have attributes. Baseclass methods come before subclass methods. Methods
 of one class have the order they have been declared in.
+
+
+
+=head2 get_nearest_methods_with_attributes
+
+The same as get_all_methods_with_attributes, except that methods from parent classes
+are not included if there is an attributeless method in a child class.
+
+For example, given:
+
+    package BaseClass;
+
+    sub foo : Attr {}
+
+    package SubClass;
+    use base qw/BaseClass/;
+
+    sub foo {}
+
+C<< SubClass->meta->get_all_methods_with_attributes >> will return 
+C<< BaseClass->meta->get_method('foo') >> for the above example, but
+this method will not.
 
 =head1 AUTHORS
 
