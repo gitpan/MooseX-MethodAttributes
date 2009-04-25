@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Class;
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 # ABSTRACT: metaclass role for storing code attributes
 
@@ -80,8 +80,11 @@ sub get_all_methods_with_attributes {
 sub get_nearest_methods_with_attributes {
     my ($self) = @_;
     
-    grep { 
-        scalar @{ $self->find_method_by_name($_->name)->attributes }
+    map {
+        my $m = $self->find_method_by_name($_->name);
+        my $meth = $m->can('attributes');
+        my $attrs = $meth ? $m->$meth() : [];
+        scalar @{ $attrs } ? ( $m ) : ( );
     } $self->get_all_methods_with_attributes;
 }
 
@@ -95,7 +98,7 @@ MooseX::MethodAttributes::Role::Meta::Class - metaclass role for storing code at
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 METHODS
 
@@ -137,14 +140,19 @@ For example, given:
 
     sub foo : Attr {}
 
+    sub bar : Attr {}
+
     package SubClass;
     use base qw/BaseClass/;
 
     sub foo {}
 
+    after bar => sub {}
+
 C<< SubClass->meta->get_all_methods_with_attributes >> will return 
 C<< BaseClass->meta->get_method('foo') >> for the above example, but
-this method will not.
+this method will not, and will return the wrapped bar method, wheras
+C<< get_all_methods_with_attributes >> will return the original method.
 
 =head1 AUTHORS
 

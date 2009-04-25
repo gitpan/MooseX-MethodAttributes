@@ -2,12 +2,12 @@ use strict;
 use warnings;
 
 package BaseClass::Meta::Role;
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 use Moose::Role;
 
 package BaseClass;
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 
 use Moose;
