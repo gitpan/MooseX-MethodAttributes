@@ -16,7 +16,7 @@ lib/MooseX/MethodAttributes/Role/Meta/Method/Wrapped.pm
 t/basic.t
 t/calling.t
 t/catalyst.t
-t/catalyst_todo.t
+t/catalyst2.t
 t/inherited.t
 t/inherited_non_moose_multilevel.t
 t/lib/BaseClass.pm

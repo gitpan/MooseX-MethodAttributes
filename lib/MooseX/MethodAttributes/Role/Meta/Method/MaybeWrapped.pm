@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped;
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 # ABSTRACT: proxy attributes of wrapped methods if their metaclass supports it
 
@@ -11,7 +11,11 @@ use namespace::clean -except => 'meta';
 
 override wrap => sub {
     my $self = super;
-    if (does_role($self->get_original_method, 'MooseX::MethodAttributes::Role::Meta::Method')) {
+    my $original_method = $self->get_original_method;
+    if (
+        does_role($original_method, 'MooseX::MethodAttributes::Role::Meta::Method')
+        || does_role($original_method, 'MooseX::MethodAttributes::Role::Meta::Method::Wrapped')
+    ) {
         MooseX::MethodAttributes::Role::Meta::Method::Wrapped->meta->apply($self);
     }
     return $self;
@@ -26,7 +30,7 @@ MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped - proxy attributes of
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 AUTHORS
 
