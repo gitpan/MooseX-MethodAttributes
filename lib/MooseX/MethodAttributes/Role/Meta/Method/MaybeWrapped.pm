@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped;
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 # ABSTRACT: proxy attributes of wrapped methods if their metaclass supports it
 
@@ -30,7 +30,7 @@ MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped - proxy attributes of
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 AUTHORS
 

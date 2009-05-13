@@ -1,10 +1,11 @@
 package MooseX::MethodAttributes::Role::AttrContainer::Inheritable;
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 # ABSTRACT: capture code attributes in the automatically initialized metaclass instance
 
 
 use Moose::Role;
+use Moose::Meta::Class ();
 use Moose::Util::MetaRole;
 use Moose::Util qw/find_meta does_role/;
 
@@ -21,7 +22,7 @@ before MODIFY_CODE_ATTRIBUTES => sub {
         && does_role($meta->method_metaclass, 'MooseX::MethodAttributes::Role::Meta::Method')
         && does_role($meta->wrapped_method_metaclass, 'MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped');
 
-    Moose->init_meta( for_class => $class )
+    Moose::Meta::Class->initialize( $class )
         unless $meta;
     Moose::Util::MetaRole::apply_metaclass_roles(
         for_class                      => $class,
@@ -33,6 +34,7 @@ before MODIFY_CODE_ATTRIBUTES => sub {
 
 1;
 
+
 __END__
 =head1 NAME
 
@@ -40,7 +42,7 @@ MooseX::MethodAttributes::Role::AttrContainer::Inheritable - capture code attrib
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 DESCRIPTION
 

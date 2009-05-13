@@ -2,10 +2,12 @@ use strict;
 use warnings;
 
 package SubSubClass;
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 
 use base qw/OtherSubClass/;
+
+sub meta { 'foo' } # Test having a meta method..
 
 sub bar : Quux {}
 
