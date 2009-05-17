@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::AttrContainer::Inheritable;
-our $VERSION = '0.11';
+our $VERSION = '0.11_01';
 
 # ABSTRACT: capture code attributes in the automatically initialized metaclass instance
 
@@ -14,7 +14,8 @@ use namespace::clean -except => 'meta';
 with 'MooseX::MethodAttributes::Role::AttrContainer';
 
 before MODIFY_CODE_ATTRIBUTES => sub {
-    my ($class) = @_;
+    my ($class, $code, @attrs) = @_;
+    return unless @attrs;
     my $meta = find_meta($class);
 
     return if $meta
@@ -42,7 +43,7 @@ MooseX::MethodAttributes::Role::AttrContainer::Inheritable - capture code attrib
 
 =head1 VERSION
 
-version 0.11
+version 0.11_01
 
 =head1 DESCRIPTION
 
