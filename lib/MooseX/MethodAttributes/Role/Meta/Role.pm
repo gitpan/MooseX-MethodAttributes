@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Role;
-our $VERSION = '0.11_01';
+our $VERSION = '0.11_02';
 
 # ABSTRACT: metarole role for storing code attributes
 
@@ -34,8 +34,8 @@ around method_metaclass => sub {
     )->name();
 };
 
-before 'apply' => sub {
-    my ($self, $thing) = @_;
+around 'apply' => sub {
+    my ($orig, $self, $thing) = @_;
     if ($thing->isa('Moose::Meta::Class')) {
         Moose::Util::MetaRole::apply_metaclass_roles(
             for_class => $thing->name,
@@ -45,23 +45,36 @@ before 'apply' => sub {
         );
     }
     elsif ($thing->isa('Moose::Meta::Role')) {
-        # No need to interfere with normal composition?
+        Moose::Util::MetaRole::apply_metaclass_roles(
+            for_class       => $thing->name,
+            metaclass_roles => [ __PACKAGE__ ],
+        );
+        ensure_all_roles($thing->name, 
+            'MooseX::MethodAttributes::Role::AttrContainer',
+        );
     }
     else {
         croak("Composing " . __PACKAGE__ . " onto instances is unsupported");
     }
-};
-
-after 'apply' => sub {
-    my ($self, $thing) = @_;
+    
     # Note that the metaclass instance we started out with may have been turned
     # into lies by the role application process, so we explicitly re-fetch it
     # here.
     my $meta = find_meta($thing->name);
+
+    my $ret = $self->$orig($meta);
+
     push @{ $meta->_method_attribute_list }, @{ $self->_method_attribute_list };
     @{ $meta->_method_attribute_map }{ keys(%{ $self->_method_attribute_map }) }
         = values %{ $self->_method_attribute_map };
+
+    return $ret;
 };
+
+package # Hide from PAUSE
+    Moose::Meta::Role::Custom::Trait::MethodAttributes;
+
+sub register_implementation { 'MooseX::MethodAttributes::Role::Meta::Role' }
 
 1;
 
@@ -73,7 +86,7 @@ MooseX::MethodAttributes::Role::Meta::Role - metarole role for storing code attr
 
 =head1 VERSION
 
-version 0.11_01
+version 0.11_02
 
 =head1 SYNOPSIS
 

@@ -1,8 +1,11 @@
 package MooseX::MethodAttributes::Inheritable;
-our $VERSION = '0.11_01';
+our $VERSION = '0.11_02';
 
 # ABSTRACT: inheritable code attribute introspection
 
+
+# Ensure trait is registered
+use MooseX::MethodAttributes::Role::Meta::Role ();
 
 use Moose;
 
@@ -12,7 +15,6 @@ with 'MooseX::MethodAttributes::Role::AttrContainer::Inheritable';
 
 __PACKAGE__->meta->make_immutable;
 
-1;
 
 __END__
 =head1 NAME
@@ -21,7 +23,7 @@ MooseX::MethodAttributes::Inheritable - inheritable code attribute introspection
 
 =head1 VERSION
 
-version 0.11_01
+version 0.11_02
 
 =head1 SYNOPSIS
 

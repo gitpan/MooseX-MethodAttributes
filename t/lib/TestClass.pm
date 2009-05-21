@@ -1,5 +1,5 @@
 package TestClass;
-our $VERSION = '0.11_01';
+our $VERSION = '0.11_02';
 
 
 use Moose;
@@ -12,7 +12,7 @@ sub bar : SomeAttribute {}
 after foo => sub {};
 
 package SubClass;
-our $VERSION = '0.11_01';
+our $VERSION = '0.11_02';
 
 
 use Moose;

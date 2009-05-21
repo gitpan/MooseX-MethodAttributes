@@ -1,3 +1,5 @@
+use strict;
+use warnings;
 {
     package Catalyst::Controller;
     use Moose;
@@ -7,7 +9,7 @@
 }
 {
     package TestApp::ControllerRole;
-    use Moose::Role -traits => 'MooseX::MethodAttributes::Role::Meta::Role';
+    use Moose::Role -traits => 'MethodAttributes';
     use namespace::clean -except => 'meta';
 
     sub get_attribute : Local { $TestApp::Controller::Moose::GET_ATTRIBUTE_CALLED++ }
@@ -63,7 +65,6 @@ use Test::Exception;
 
 
 {
-    my @methods;
     my @methods = TestApp::Controller::Moose::MethodModifiers->meta->get_all_methods_with_attributes;
     my @local_methods = TestApp::Controller::Moose::MethodModifiers->meta->get_method_with_attributes_list;
     is @methods, 3;

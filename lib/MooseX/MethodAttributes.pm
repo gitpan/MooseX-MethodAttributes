@@ -2,13 +2,15 @@ use strict;
 use warnings;
 
 package MooseX::MethodAttributes;
-our $VERSION = '0.11_01';
+our $VERSION = '0.11_02';
 
 # ABSTRACT: code attribute introspection
 
 use Moose ();
 use Moose::Exporter;
 use Moose::Util::MetaRole;
+# Ensure trait is registered
+use MooseX::MethodAttributes::Role::Meta::Role ();
 
 
 Moose::Exporter->setup_import_methods;
@@ -38,7 +40,7 @@ MooseX::MethodAttributes - code attribute introspection
 
 =head1 VERSION
 
-version 0.11_01
+version 0.11_02
 
 =head1 SYNOPSIS
 
