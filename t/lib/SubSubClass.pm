@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package SubSubClass;
-our $VERSION = '0.11_02';
+our $VERSION = '0.11_03';
 
 
 use base qw/OtherSubClass/;
