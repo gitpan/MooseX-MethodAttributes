@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package MooseX::MethodAttributes;
-our $VERSION = '0.11_03';
+our $VERSION = '0.12';
 
 # ABSTRACT: code attribute introspection
 
@@ -40,7 +40,7 @@ MooseX::MethodAttributes - code attribute introspection
 
 =head1 VERSION
 
-version 0.11_03
+version 0.12
 
 =head1 SYNOPSIS
 

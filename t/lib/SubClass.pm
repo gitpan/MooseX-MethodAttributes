@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package SubClass;
-our $VERSION = '0.11_03';
+our $VERSION = '0.12';
 
 
 use Moose;

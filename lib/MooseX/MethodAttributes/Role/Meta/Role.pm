@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Role;
-our $VERSION = '0.11_03';
+our $VERSION = '0.12';
 
 # ABSTRACT: metarole role for storing code attributes
 
@@ -35,13 +35,15 @@ around method_metaclass => sub {
 };
 
 around 'apply' => sub {
-    my ($orig, $self, $thing) = @_;
+    my ($orig, $self, $thing, %opts) = @_;
+    die("MooseX::MethodAttributes does not currently support method exclusion or aliasing.")
+        if ($opts{alias} or $opts{exclude});
     if ($thing->isa('Moose::Meta::Class')) {
         unless (
            does_role($thing, 'MooseX::MethodAttributes::Role::Meta::Class')
         && does_role($thing->method_metaclass, 'MooseX::MethodAttributes::Role::Meta::Method')
         && does_role($thing->wrapped_method_metaclass, 'MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped')) {
-        
+
             Moose::Util::MetaRole::apply_metaclass_roles(
                 for_class => $thing->name,
                 metaclass_roles => ['MooseX::MethodAttributes::Role::Meta::Class'],
@@ -55,14 +57,14 @@ around 'apply' => sub {
             for_class       => $thing->name,
             metaclass_roles => [ __PACKAGE__ ],
         );
-        ensure_all_roles($thing->name, 
+        ensure_all_roles($thing->name,
             'MooseX::MethodAttributes::Role::AttrContainer',
         );
     }
     else {
         croak("Composing " . __PACKAGE__ . " onto instances is unsupported");
     }
-    
+
     # Note that the metaclass instance we started out with may have been turned
     # into lies by the role application process, so we explicitly re-fetch it
     # here.
@@ -92,7 +94,7 @@ MooseX::MethodAttributes::Role::Meta::Role - metarole role for storing code attr
 
 =head1 VERSION
 
-version 0.11_03
+version 0.12
 
 =head1 SYNOPSIS
 
@@ -114,6 +116,10 @@ This module allows you to add code attributes to methods in Moose roles.
 
 These attributes can then be found later once the methods are composed
 into a class.
+
+Note that currently roles with attributes cannot have methods excluded
+or aliased, and will in turn confer this property onto any roles they
+are composed onto.
 
 =head1 AUTHORS
 

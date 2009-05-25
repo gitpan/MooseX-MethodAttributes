@@ -1,13 +1,16 @@
 ---
-abstract: code attribute introspection
+abstract: 'code attribute introspection'
 author:
-- Florian Ragwitz <rafl@debian.org>
-- Tomas Doran <bobtfish@bobtfish.net>
-generated_by: Dist::Zilla::Plugin::MetaYaml version 1.091260
+  - 'Florian Ragwitz <rafl@debian.org>'
+  - 'Tomas Doran <bobtfish@bobtfish.net>'
+generated_by: 'Dist::Zilla::Plugin::MetaYAML version 1.091440'
 license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
 name: MooseX-MethodAttributes
 requires:
-  Moose: '0.79'
-  MooseX::Types: '0.06'
-  namespace::clean: '0'
-version: 0.11_03
+  Moose: 0.79
+  MooseX::Types: 0.06
+  namespace::clean: 0
+version: 0.12

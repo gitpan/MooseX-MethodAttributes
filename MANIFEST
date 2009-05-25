@@ -20,6 +20,7 @@ t/basic.t
 t/calling.t
 t/catalyst.t
 t/catalyst_role.t
+t/catalyst_role_method_aliasing.t
 t/catalyst_role_preexist_methods.t
 t/inherited.t
 t/inherited_non_moose_multilevel.t

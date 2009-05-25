@@ -14,34 +14,28 @@ use warnings;
     use Moose::Role -traits => 'MethodAttributes';
     use namespace::clean -except => 'meta';
 
-    sub not_attributed : Local {} # This method should _not_ get composed.
+    sub not_attributed : Local {} # This method should get composed as foo.
 }
 {
     package roles::Controller::Foo;
     use Moose;
     BEGIN { extends 'Catalyst::Controller'; }
 
-    with 'ControllerRole';
-
-    sub load : Chained('base') PathPart('') CaptureArgs(1) { }
-
-    sub base : Chained('/') PathPart('foo') CaptureArgs(0) { }
-
-    sub entry : Chained('load') PathPart('') CaptureArgs(0) { }
-
-    sub some_page : Chained('entry') { }
+    use Test::More tests => 1;
+    use Test::Exception;
+    throws_ok {
+        with 'ControllerRole' => { alias => { not_attributed => 'foo' } };
+    } qr/oes not currently support/;
+    exit;
 
     sub not_attributed {}
 }
-
-use Test::More tests => 10;
+__END__
+use Test::More tests => 4;
 
 my $meta = roles::Controller::Foo->meta;
 my %expected = (
-    base => ["Chained('/')", "PathPart('foo')", "CaptureArgs(0)"],
-    load => ["Chained('base')", "PathPart('')", "CaptureArgs(1)"],
-    entry => ["Chained('load')", "PathPart('')", "CaptureArgs(0)"],
-    some_page => ["Chained('entry')"],
+    foo => ["Local"],
     not_attributed => [],
 );
 foreach my $method_name (keys %expected) {
