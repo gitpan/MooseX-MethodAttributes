@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Role;
-our $VERSION = '0.13';
+our $VERSION = '0.14';
 
 # ABSTRACT: metarole role for storing code attributes
 
@@ -53,10 +53,14 @@ around 'apply' => sub {
         }
     }
     elsif ($thing->isa('Moose::Meta::Role')) {
-        Moose::Util::MetaRole::apply_metaclass_roles(
-            for_class       => $thing->name,
-            metaclass_roles => [ __PACKAGE__ ],
-        );
+        unless (
+            does_role( $thing->meta->name, __PACKAGE__ )
+        ) {
+            Moose::Util::MetaRole::apply_metaclass_roles(
+                for_class       => $thing->name,
+                metaclass_roles => [ __PACKAGE__ ],
+            );
+        }
         ensure_all_roles($thing->name,
             'MooseX::MethodAttributes::Role::AttrContainer',
         );
@@ -71,10 +75,10 @@ around 'apply' => sub {
     my $meta = find_meta($thing->name);
 
     my $ret = $self->$orig($meta);
-
+    
     push @{ $meta->_method_attribute_list }, @{ $self->_method_attribute_list };
-    @{ $meta->_method_attribute_map }{ keys(%{ $self->_method_attribute_map }) }
-        = values %{ $self->_method_attribute_map };
+    @{ $meta->_method_attribute_map }{ (keys(%{ $self->_method_attribute_map }), keys(%{ $meta->_method_attribute_map })) }
+        = (values(%{ $self->_method_attribute_map }), values(%{ $meta->_method_attribute_map }));
 
     return $ret;
 };
@@ -94,7 +98,7 @@ MooseX::MethodAttributes::Role::Meta::Role - metarole role for storing code attr
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 
