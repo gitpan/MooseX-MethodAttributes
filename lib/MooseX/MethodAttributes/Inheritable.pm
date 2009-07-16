@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Inheritable;
-our $VERSION = '0.14';
+our $VERSION = '0.14_01';
 
 # ABSTRACT: inheritable code attribute introspection
 
@@ -23,7 +23,7 @@ MooseX::MethodAttributes::Inheritable - inheritable code attribute introspection
 
 =head1 VERSION
 
-version 0.14
+version 0.14_01
 
 =head1 SYNOPSIS
 

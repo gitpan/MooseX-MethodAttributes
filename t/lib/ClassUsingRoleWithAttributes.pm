@@ -1,5 +1,5 @@
 package ClassUsingRoleWithAttributes;
-our $VERSION = '0.14';
+our $VERSION = '0.14_01';
 
 use Moose;
 # FIXME - This should not have to be here.

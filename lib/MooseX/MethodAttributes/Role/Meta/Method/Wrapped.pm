@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Method::Wrapped;
-our $VERSION = '0.14';
+our $VERSION = '0.14_01';
 
 # ABSTRACT: wrapped metamethod role allowing code attribute introspection
 
@@ -27,7 +27,7 @@ MooseX::MethodAttributes::Role::Meta::Method::Wrapped - wrapped metamethod role 
 
 =head1 VERSION
 
-version 0.14
+version 0.14_01
 
 =head1 METHODS
 
