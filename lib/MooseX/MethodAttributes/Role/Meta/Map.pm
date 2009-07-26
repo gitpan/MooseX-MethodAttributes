@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Map;
-our $VERSION = '0.14_01';
+our $VERSION = '0.15';
 
 # ABSTRACT: role for storing code attributes
 
@@ -46,7 +46,7 @@ MooseX::MethodAttributes::Role::Meta::Map - role for storing code attributes
 
 =head1 VERSION
 
-version 0.14_01
+version 0.15
 
 =head1 METHODS
 

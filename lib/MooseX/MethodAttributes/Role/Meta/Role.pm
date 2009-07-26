@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Role;
-our $VERSION = '0.14_01';
+our $VERSION = '0.15';
 
 # ABSTRACT: metarole role for storing code attributes
 
@@ -115,7 +115,7 @@ MooseX::MethodAttributes::Role::Meta::Role - metarole role for storing code attr
 
 =head1 VERSION
 
-version 0.14_01
+version 0.15
 
 =head1 SYNOPSIS
 

@@ -1,5 +1,5 @@
 package OtherRoleWithAttributes;
-our $VERSION = '0.14_01';
+our $VERSION = '0.15';
 
 use Moose::Role -traits => 'MethodAttributes';
 use namespace::clean -except => 'meta';

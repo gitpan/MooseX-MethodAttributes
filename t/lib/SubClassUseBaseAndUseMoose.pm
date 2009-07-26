@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package SubClassUseBaseAndUseMoose;
-our $VERSION = '0.14_01';
+our $VERSION = '0.15';
 
 
 use base qw/BaseClass/;
