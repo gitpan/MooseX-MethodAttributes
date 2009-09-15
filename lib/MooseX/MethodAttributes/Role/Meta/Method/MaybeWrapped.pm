@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped;
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 # ABSTRACT: proxy attributes of wrapped methods if their metaclass supports it
 
@@ -24,13 +24,16 @@ override wrap => sub {
 1;
 
 __END__
+
+=pod
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped - proxy attributes of wrapped methods if their metaclass supports it
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 AUTHORS
 
@@ -42,5 +45,8 @@ version 0.15
 This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl 5 programming language system itself.
+
+=cut 
+
 

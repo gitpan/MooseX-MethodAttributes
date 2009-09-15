@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Class;
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 # ABSTRACT: metaclass role for storing code attributes
 
@@ -15,7 +15,7 @@ with qw/
 
 sub get_method_with_attributes_list {
     my ($self) = @_;
-    my @methods = values %{ $self->get_method_map };
+    my @methods = map { $self->get_method($_) } $self->get_method_list;
     my %order;
 
     {
@@ -70,22 +70,10 @@ foreach my $type (qw/after before around/) {
         my $orig = shift;
         my $meta = shift;
         my ($method_name) = @_;
-    
-        unless(
-            does_role($meta, 'MooseX::MethodAttributes::Role::Meta::Class')
-            && does_role($meta->method_metaclass, 'MooseX::MethodAttributes::Role::Meta::Method')
-            && does_role($meta->wrapped_method_metaclass, 'MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped')
-        ) {
-    
-            Moose::Util::MetaRole::apply_metaclass_roles(
-                for_class                      => $meta->name,
-                metaclass_roles                => ['MooseX::MethodAttributes::Role::Meta::Class'],
-                method_metaclass_roles         => ['MooseX::MethodAttributes::Role::Meta::Method'],
-                wrapped_method_metaclass_roles => ['MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped'],
-            );
-            # Get replaced metaclass..
-            $meta = find_meta($meta->name);
-        }
+
+		# Ensure the correct metaclass
+        $meta = MooseX::MethodAttributes->init_meta( for_class => $meta->name );
+
         my $code = $meta->$orig(@_);
         my $method = $meta->get_method($method_name);
         if (
@@ -102,13 +90,16 @@ foreach my $type (qw/after before around/) {
 
 
 __END__
+
+=pod
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Class - metaclass role for storing code attributes
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 METHODS
 
@@ -152,6 +143,8 @@ C<< BaseClass->meta->get_method('foo') >> for the above example, but
 this method will not, and will return the wrapped bar method, wheras
 C<< get_all_methods_with_attributes >> will return the original method.
 
+
+
 =head1 AUTHORS
 
   Florian Ragwitz <rafl@debian.org>
@@ -162,5 +155,8 @@ C<< get_all_methods_with_attributes >> will return the original method.
 This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl 5 programming language system itself.
+
+=cut 
+
 

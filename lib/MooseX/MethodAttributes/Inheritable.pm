@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Inheritable;
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 # ABSTRACT: inheritable code attribute introspection
 
@@ -17,13 +17,16 @@ __PACKAGE__->meta->make_immutable;
 
 
 __END__
+
+=pod
+
 =head1 NAME
 
 MooseX::MethodAttributes::Inheritable - inheritable code attribute introspection
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 
@@ -43,6 +46,8 @@ This module does the same as C<MooseX::MethodAttributes>, except that classes
 inheriting from other classes using it don't need to do anything special to get
 their code attributes captured.
 
+
+
 =head1 AUTHORS
 
   Florian Ragwitz <rafl@debian.org>
@@ -53,5 +58,8 @@ their code attributes captured.
 This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl 5 programming language system itself.
+
+=cut 
+
 

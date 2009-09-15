@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::AttrContainer;
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 # ABSTRACT: capture code attributes in the class' metaclass
 
@@ -18,13 +18,16 @@ sub MODIFY_CODE_ATTRIBUTES {
 1;
 
 __END__
+
+=pod
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::AttrContainer - capture code attributes in the class' metaclass
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 METHODS
 
@@ -33,6 +36,8 @@ version 0.15
 Accepts a list of attributes for a coderef and stores it the class' metaclass.
 
 See L<attributes>.
+
+
 
 =head1 AUTHORS
 
@@ -44,5 +49,8 @@ See L<attributes>.
 This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl 5 programming language system itself.
+
+=cut 
+
 

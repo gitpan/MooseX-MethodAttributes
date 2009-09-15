@@ -1,5 +1,5 @@
 package UsesMultipleRoles;
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 use Moose;
 use namespace::clean -except => 'meta';

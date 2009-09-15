@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Method::Wrapped;
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 # ABSTRACT: wrapped metamethod role allowing code attribute introspection
 
@@ -21,19 +21,24 @@ sub _get_attributed_coderef {
 1;
 
 __END__
+
+=pod
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Method::Wrapped - wrapped metamethod role allowing code attribute introspection
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 METHODS
 
 =head2 attributes
 
 Gets the list of code attributes of the original method this meta method wraps.
+
+
 
 =head1 AUTHORS
 
@@ -45,5 +50,8 @@ Gets the list of code attributes of the original method this meta method wraps.
 This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl 5 programming language system itself.
+
+=cut 
+
 

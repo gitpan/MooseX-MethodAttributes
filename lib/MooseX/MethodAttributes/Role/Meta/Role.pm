@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Role;
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 # ABSTRACT: metarole role for storing code attributes
 
@@ -91,7 +91,7 @@ around 'apply' => sub {
         $thing = find_meta($thing->name);
     }
 
-    my $ret = $self->$orig($thing);
+    my $ret = $self->$orig($thing, %opts);
 
     push @{ $thing->_method_attribute_list }, @{ $self->_method_attribute_list };
     @{ $thing->_method_attribute_map }{ (keys(%{ $self->_method_attribute_map }), keys(%{ $thing->_method_attribute_map })) }
@@ -109,13 +109,16 @@ sub register_implementation { 'MooseX::MethodAttributes::Role::Meta::Role' }
 
 
 __END__
+
+=pod
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Role - metarole role for storing code attributes
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 
@@ -138,18 +141,6 @@ This module allows you to add code attributes to methods in Moose roles.
 These attributes can then be found later once the methods are composed
 into a class.
 
-=head1 AUTHORS
-
-  Florian Ragwitz <rafl@debian.org>
-  Tomas Doran <bobtfish@bobtfish.net>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2009 by Florian Ragwitz.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
-
 =head1 CAVEATS
 
 =over 
@@ -166,5 +157,22 @@ Composing multiple roles with attributes onto a class at once will fail
 to work as expected, therefore conflict resolution cannot be taken advantage
 of.
 
-=back
+=back 
+
+
+
+=head1 AUTHORS
+
+  Florian Ragwitz <rafl@debian.org>
+  Tomas Doran <bobtfish@bobtfish.net>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2009 by Florian Ragwitz.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut 
+
 

@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Map;
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 # ABSTRACT: role for storing code attributes
 
@@ -40,13 +40,16 @@ sub get_method_attributes {
 
 
 __END__
+
+=pod
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Map - role for storing code attributes
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 METHODS
 
@@ -60,6 +63,8 @@ Register a list of attributes for a code reference.
 
 Get a list of attributes associated with a coderef.
 
+
+
 =head1 AUTHORS
 
   Florian Ragwitz <rafl@debian.org>
@@ -70,5 +75,8 @@ Get a list of attributes associated with a coderef.
 This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl 5 programming language system itself.
+
+=cut 
+
 
