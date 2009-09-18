@@ -10,10 +10,9 @@ meta-spec:
   version: 1.4
 name: MooseX-MethodAttributes
 requires:
-  MRO::Compat: 0
-  Moose: 0.79
-  MooseX::Types: 0.06
+  Moose: 0.90
+  MooseX::Types: 0.19
   Test::Exception: 0
   Test::More: 0
-  namespace::clean: 0
-version: 0.16
+  namespace::clean: 0.10
+version: 0.16_01
