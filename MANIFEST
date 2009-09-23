@@ -27,6 +27,7 @@ t/catalyst_role_method_exclusion.t
 t/catalyst_role_preexist_methods.t
 t/inherited.t
 t/inherited_non_moose_multilevel.t
+t/late_reinitialize.t
 t/lib/BaseClass.pm
 t/lib/ClassUsingRoleWithAttributes.pm
 t/lib/OtherRoleWithAttributes.pm
@@ -47,4 +48,5 @@ t/role.t
 t/role_applied.t
 t/role_in_role.t
 t/role_in_role_more.t
+t/role_method_conflict_detection.t
 t/role_with_anon_class.t

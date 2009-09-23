@@ -11,8 +11,8 @@ meta-spec:
 name: MooseX-MethodAttributes
 requires:
   Moose: 0.90
-  MooseX::Types: 0.19
+  MooseX::Types: 0.20
   Test::Exception: 0
   Test::More: 0
   namespace::clean: 0.10
-version: 0.16_01
+version: 0.17

@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Role::Application;
-our $VERSION = '0.16_01';
+our $VERSION = '0.17';
 
 # ABSTRACT: generic role for applying a role with method attributes to something
 
@@ -13,6 +13,7 @@ requires qw/
     _copy_attributes
     apply
 /;
+
 
 around 'apply' => sub {
     my ($orig, $self, $thing, %opts) = @_;
@@ -74,7 +75,18 @@ MooseX::MethodAttributes::Role::Meta::Role::Application - generic role for apply
 
 =head1 VERSION
 
-version 0.16_01
+version 0.17
+
+=head1 METHODS
+
+=head2 apply
+
+The apply method is wrapped to ensure that the correct metaclasses to hold and propagate
+method attribute data are present on the target for role application, delegates to
+the original method to actually apply the role, then ensures that any attributes from
+the role are copied to the target class.
+
+
 
 =head1 AUTHORS
 
@@ -86,7 +98,7 @@ version 0.16_01
 This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+the same terms as perl itself.
 
 =cut 
 

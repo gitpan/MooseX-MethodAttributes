@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::AttrContainer::Inheritable;
-our $VERSION = '0.16_01';
+our $VERSION = '0.17';
 
 # ABSTRACT: capture code attributes in the automatically initialized metaclass instance
 
@@ -30,7 +30,7 @@ MooseX::MethodAttributes::Role::AttrContainer::Inheritable - capture code attrib
 
 =head1 VERSION
 
-version 0.16_01
+version 0.17
 
 =head1 DESCRIPTION
 
@@ -50,7 +50,7 @@ applying the meta roles relevant for capturing method attributes.
 This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+the same terms as perl itself.
 
 =cut 
 
