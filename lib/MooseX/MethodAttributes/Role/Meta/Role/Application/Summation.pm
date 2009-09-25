@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Role::Application::Summation;
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 
 # ABSTRACT: Role applied to the class responsible for role summation which ensures method attributes propagate from the roles being summed onto the combined role.
 
@@ -29,7 +29,7 @@ MooseX::MethodAttributes::Role::Meta::Role::Application::Summation - Role applie
 
 =head1 VERSION
 
-version 0.17
+version 0.18
 
 =head1 AUTHORS
 

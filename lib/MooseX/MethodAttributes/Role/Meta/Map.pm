@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Map;
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 
 # ABSTRACT: generic role for storing code attributes used by classes and roles with attributes
 
@@ -49,7 +49,7 @@ MooseX::MethodAttributes::Role::Meta::Map - generic role for storing code attrib
 
 =head1 VERSION
 
-version 0.17
+version 0.18
 
 =head1 METHODS
 

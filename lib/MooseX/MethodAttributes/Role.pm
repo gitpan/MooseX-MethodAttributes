@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 package MooseX::MethodAttributes::Role;
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 
 # ABSTRACT: code attribute introspection
 
@@ -52,7 +52,7 @@ MooseX::MethodAttributes::Role - code attribute introspection
 
 =head1 VERSION
 
-version 0.17
+version 0.18
 
 =head1 SYNOPSIS
 

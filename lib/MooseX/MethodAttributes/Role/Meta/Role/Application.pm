@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Role::Application;
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 
 # ABSTRACT: generic role for applying a role with method attributes to something
 
@@ -75,7 +75,7 @@ MooseX::MethodAttributes::Role::Meta::Role::Application - generic role for apply
 
 =head1 VERSION
 
-version 0.17
+version 0.18
 
 =head1 METHODS
 
