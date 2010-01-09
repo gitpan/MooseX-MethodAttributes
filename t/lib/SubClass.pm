@@ -2,8 +2,7 @@ use strict;
 use warnings;
 
 package SubClass;
-our $VERSION = '0.18';
-
+our $VERSION = '0.19';
 
 use Moose;
 BEGIN { extends 'BaseClass'; }

@@ -1,8 +1,8 @@
 package MooseX::MethodAttributes::Role::Meta::Role;
-our $VERSION = '0.18';
-
+our $VERSION = '0.19';
 # ABSTRACT: metarole role for storing code attributes
 
+use Moose ();
 use Moose::Util::MetaRole;
 use Moose::Util qw/find_meta does_role ensure_all_roles/;
 use Carp qw/croak/;
@@ -20,9 +20,15 @@ with qw/
     MooseX::MethodAttributes::Role::Meta::Role::Application
 /;
 
-has '+composition_class_roles' => (
-    default => [ 'MooseX::MethodAttributes::Role::Meta::Role::Application::Summation' ],
-);
+$Moose::VERSION >= 0.9301
+    ? around composition_class_roles => sub {
+        my ($orig, $self) = @_;
+        return $self->$orig,
+            'MooseX::MethodAttributes::Role::Meta::Role::Application::Summation';
+    }
+    : has '+composition_class_roles' => (
+        default => sub { [ 'MooseX::MethodAttributes::Role::Meta::Role::Application::Summation' ] },
+    );
 
 
 after 'initialize' => sub {
@@ -59,6 +65,7 @@ sub _copy_attributes {
 # is now only present for backwards compatibility reasons.
 package # Hide from PAUSE
     Moose::Meta::Role::Custom::Trait::MethodAttributes;
+our $VERSION = '0.19';
 
 sub register_implementation { 'MooseX::MethodAttributes::Role::Meta::Role' }
 
@@ -75,7 +82,7 @@ MooseX::MethodAttributes::Role::Meta::Role - metarole role for storing code attr
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 SYNOPSIS
 
@@ -140,10 +147,10 @@ querying the metaclass.
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by Florian Ragwitz.
+This software is copyright (c) 2010 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl 5 programming language system itself.
 
 =cut 
 

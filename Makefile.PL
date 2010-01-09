@@ -2,14 +2,16 @@
 use strict;
 use warnings;
 
+
+
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
   DISTNAME  => 'MooseX-MethodAttributes',
   NAME      => 'MooseX::MethodAttributes',
-  AUTHOR    => 'Florian\ Ragwitz\ \<rafl\@debian\.org\>\,\ Tomas\ Doran\ \<bobtfish\@bobtfish\.net\>',
-  ABSTRACT  => 'code\ attribute\ introspection',
-  VERSION   => '0.18',
+  AUTHOR    => "Florian\ Ragwitz\ \<rafl\@debian\.org\>\,\ Tomas\ Doran\ \<bobtfish\@bobtfish\.net\>",
+  ABSTRACT  => "code\ attribute\ introspection",
+  VERSION   => '0.19',
   EXE_FILES => [ qw() ],
   (eval { ExtUtils::MakeMaker->VERSION(6.31) } ? (LICENSE => 'perl') : ()),
   PREREQ_PM    => {
@@ -20,4 +22,6 @@ WriteMakefile(
     "MooseX::Types" => '0.20',
     "Moose" => '0.90',
   },
+  test => {TESTS => 't/*.t'}
 );
+

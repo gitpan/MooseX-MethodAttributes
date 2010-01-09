@@ -3,7 +3,7 @@ abstract: 'code attribute introspection'
 author:
   - 'Florian Ragwitz <rafl@debian.org>'
   - 'Tomas Doran <bobtfish@bobtfish.net>'
-generated_by: 'Dist::Zilla::Plugin::MetaYAML version 1.092450'
+generated_by: 'Dist::Zilla version 1.093400'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -16,4 +16,4 @@ requires:
   Test::More: 0.88
   namespace::autoclean: 0
   namespace::clean: 0.10
-version: 0.18
+version: 0.19

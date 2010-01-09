@@ -1,6 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Class;
-our $VERSION = '0.18';
-
+our $VERSION = '0.19';
 # ABSTRACT: metaclass role for storing code attributes
 
 use Moose::Role;
@@ -99,7 +98,7 @@ MooseX::MethodAttributes::Role::Meta::Class - metaclass role for storing code at
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 METHODS
 
@@ -152,10 +151,10 @@ C<< get_all_methods_with_attributes >> will return the original method.
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by Florian Ragwitz.
+This software is copyright (c) 2010 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl 5 programming language system itself.
 
 =cut 
 

@@ -1,6 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Role::Application::Summation;
-our $VERSION = '0.18';
-
+our $VERSION = '0.19';
 # ABSTRACT: Role applied to the class responsible for role summation which ensures method attributes propagate from the roles being summed onto the combined role.
 
 use Moose::Role;
@@ -29,7 +28,7 @@ MooseX::MethodAttributes::Role::Meta::Role::Application::Summation - Role applie
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 AUTHORS
 
@@ -38,10 +37,10 @@ version 0.18
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by Florian Ragwitz.
+This software is copyright (c) 2010 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
+the same terms as the Perl 5 programming language system itself.
 
 =cut 
 

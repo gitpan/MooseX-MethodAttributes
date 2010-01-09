@@ -4,7 +4,6 @@ MANIFEST
 META.yml
 Makefile.PL
 README
-TODO
 dist.ini
 lib/MooseX/MethodAttributes.pm
 lib/MooseX/MethodAttributes/Inheritable.pm
