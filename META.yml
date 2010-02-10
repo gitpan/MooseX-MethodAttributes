@@ -3,17 +3,18 @@ abstract: 'code attribute introspection'
 author:
   - 'Florian Ragwitz <rafl@debian.org>'
   - 'Tomas Doran <bobtfish@bobtfish.net>'
-generated_by: 'Dist::Zilla version 1.093400'
+generated_by: 'Dist::Zilla version 1.100160'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: MooseX-MethodAttributes
 requires:
-  Moose: 0.90
+  ExtUtils::MakeMaker: 6.11
+  Moose: 0.97
   MooseX::Types: 0.20
   Test::Exception: 0
   Test::More: 0.88
   namespace::autoclean: 0
   namespace::clean: 0.10
-version: 0.19
+version: 0.20

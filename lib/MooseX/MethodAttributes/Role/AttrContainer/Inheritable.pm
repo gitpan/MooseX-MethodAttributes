@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::AttrContainer::Inheritable;
-our $VERSION = '0.19';
+our $VERSION = '0.20';
 # ABSTRACT: capture code attributes in the automatically initialized metaclass instance
 
 
@@ -29,7 +29,7 @@ MooseX::MethodAttributes::Role::AttrContainer::Inheritable - capture code attrib
 
 =head1 VERSION
 
-version 0.19
+version 0.20
 
 =head1 DESCRIPTION
 

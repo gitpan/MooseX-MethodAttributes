@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Role::Application;
-our $VERSION = '0.19';
+our $VERSION = '0.20';
 # ABSTRACT: generic role for applying a role with method attributes to something
 
 use Moose::Role;
@@ -41,25 +41,7 @@ sub _apply_metaclasses {
     # into lies by the metatrait role application process, so we explicitly
     # re-fetch it here.
 
-    # Alternatively, for epic shits and giggles, the meta trait application
-    # process (onto $thing) may have applied roles to our metaclass, but (if
-    # $thing is an anon class, not correctly replaced it in the metaclass cache.
-    # This results in the DESTROY method in Class::MOP::Class r(eap|ape)ing the
-    # package, which is unfortunate, as it removes all your methods and superclasses.
-    # Therefore, we avoid that by ramming the metaclass we've just been handed into
-    # the cache without weakening it.
-
-    # I'm fairly sure the 2nd part of that is a Moose bug, and should go away..
-    # Unfortunately, the implication of that is that whenever you apply roles to a class,
-    # the metaclass instance can change, and so needs to be re-retrieved or handed back
-    # to the caller :/
-    if ($thing->can('is_anon_class') and $thing->is_anon_class) {
-        Class::MOP::store_metaclass_by_name($thing->name, $thing);
-    }
-    else {
-        return find_meta($thing->name);
-    }
-    return $thing;
+    return find_meta($thing->name);
 }
 
 1;
@@ -74,7 +56,7 @@ MooseX::MethodAttributes::Role::Meta::Role::Application - generic role for apply
 
 =head1 VERSION
 
-version 0.19
+version 0.20
 
 =head1 METHODS
 

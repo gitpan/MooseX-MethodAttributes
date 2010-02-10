@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Role;
-our $VERSION = '0.19';
+our $VERSION = '0.20';
 # ABSTRACT: metarole role for storing code attributes
 
 use Moose ();
@@ -65,7 +65,7 @@ sub _copy_attributes {
 # is now only present for backwards compatibility reasons.
 package # Hide from PAUSE
     Moose::Meta::Role::Custom::Trait::MethodAttributes;
-our $VERSION = '0.19';
+our $VERSION = '0.20';
 
 sub register_implementation { 'MooseX::MethodAttributes::Role::Meta::Role' }
 
@@ -82,7 +82,7 @@ MooseX::MethodAttributes::Role::Meta::Role - metarole role for storing code attr
 
 =head1 VERSION
 
-version 0.19
+version 0.20
 
 =head1 SYNOPSIS
 

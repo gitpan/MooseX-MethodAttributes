@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::Meta::Method;
-our $VERSION = '0.19';
+our $VERSION = '0.20';
 # ABSTRACT: metamethod role allowing code attribute introspection
 
 use Moose::Role;
@@ -36,7 +36,7 @@ MooseX::MethodAttributes::Role::Meta::Method - metamethod role allowing code att
 
 =head1 VERSION
 
-version 0.19
+version 0.20
 
 =head1 ATTRIBUTES
 

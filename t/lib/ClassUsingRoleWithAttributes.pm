@@ -1,5 +1,5 @@
 package ClassUsingRoleWithAttributes;
-our $VERSION = '0.19';
+our $VERSION = '0.20';
 use Moose;
 # FIXME - This should not have to be here.
 use MooseX::MethodAttributes;

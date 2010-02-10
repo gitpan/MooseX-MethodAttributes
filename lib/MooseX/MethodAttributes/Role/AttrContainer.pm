@@ -1,5 +1,5 @@
 package MooseX::MethodAttributes::Role::AttrContainer;
-our $VERSION = '0.19';
+our $VERSION = '0.20';
 # ABSTRACT: capture code attributes in the class' metaclass
 
 use Moose::Role;
@@ -26,7 +26,7 @@ MooseX::MethodAttributes::Role::AttrContainer - capture code attributes in the c
 
 =head1 VERSION
 
-version 0.19
+version 0.20
 
 =head1 METHODS
 
