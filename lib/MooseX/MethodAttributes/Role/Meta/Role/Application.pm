@@ -1,5 +1,10 @@
 package MooseX::MethodAttributes::Role::Meta::Role::Application;
-our $VERSION = '0.20';
+BEGIN {
+  $MooseX::MethodAttributes::Role::Meta::Role::Application::AUTHORITY = 'cpan:FLORA';
+}
+BEGIN {
+  $MooseX::MethodAttributes::Role::Meta::Role::Application::VERSION = '0.21';
+}
 # ABSTRACT: generic role for applying a role with method attributes to something
 
 use Moose::Role;
@@ -47,16 +52,11 @@ sub _apply_metaclasses {
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Role::Application - generic role for applying a role with method attributes to something
-
-=head1 VERSION
-
-version 0.20
 
 =head1 METHODS
 
@@ -66,8 +66,6 @@ The apply method is wrapped to ensure that the correct metaclasses to hold and p
 method attribute data are present on the target for role application, delegates to
 the original method to actually apply the role, then ensures that any attributes from
 the role are copied to the target class.
-
-
 
 =head1 AUTHORS
 
@@ -81,6 +79,5 @@ This software is copyright (c) 2010 by Florian Ragwitz.
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
+=cut
 

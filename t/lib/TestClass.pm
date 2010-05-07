@@ -1,5 +1,4 @@
 package TestClass;
-our $VERSION = '0.20';
 
 use Moose;
 use MooseX::MethodAttributes;
@@ -11,7 +10,6 @@ sub bar : SomeAttribute {}
 after foo => sub {};
 
 package SubClass;
-our $VERSION = '0.20';
 
 use Moose;
 use MooseX::MethodAttributes;

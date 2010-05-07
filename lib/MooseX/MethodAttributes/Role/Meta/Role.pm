@@ -1,5 +1,10 @@
 package MooseX::MethodAttributes::Role::Meta::Role;
-our $VERSION = '0.20';
+BEGIN {
+  $MooseX::MethodAttributes::Role::Meta::Role::AUTHORITY = 'cpan:FLORA';
+}
+BEGIN {
+  $MooseX::MethodAttributes::Role::Meta::Role::VERSION = '0.21';
+}
 # ABSTRACT: metarole role for storing code attributes
 
 use Moose ();
@@ -65,7 +70,12 @@ sub _copy_attributes {
 # is now only present for backwards compatibility reasons.
 package # Hide from PAUSE
     Moose::Meta::Role::Custom::Trait::MethodAttributes;
-our $VERSION = '0.20';
+BEGIN {
+  $Moose::Meta::Role::Custom::Trait::MethodAttributes::AUTHORITY = 'cpan:FLORA';
+}
+BEGIN {
+  $Moose::Meta::Role::Custom::Trait::MethodAttributes::VERSION = '0.21';
+}
 
 sub register_implementation { 'MooseX::MethodAttributes::Role::Meta::Role' }
 
@@ -73,22 +83,17 @@ sub register_implementation { 'MooseX::MethodAttributes::Role::Meta::Role' }
 
 
 __END__
-
 =pod
 
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Role - metarole role for storing code attributes
 
-=head1 VERSION
-
-version 0.20
-
 =head1 SYNOPSIS
 
     package MyRole;
     use MooseX::MethodAttributes::Role;
-
+    
     sub foo : Bar Baz('corge') { ... }
 
     package MyClass
@@ -106,20 +111,6 @@ you to add code attributes to methods in Moose roles.
 These attributes can then be found by introspecting the role metaclass, and are automatically copied
 into any classes or roles that the role is composed onto.
 
-=head1 CAVEATS
-
-=over 
-
-=item *
-
-Currently roles with attributes cannot have methods excluded
-or aliased, and will in turn confer this property onto any roles they
-are composed onto.
-
-=back 
-
-
-
 =head1 METHODS
 
 =head2 initialize
@@ -129,8 +120,6 @@ L<MooseX::MethodAttributes::Role::AttrContainer> role during initialisation,
 which in turn is responsible for capturing the method attributes on the class
 and registering them with the metaclass.
 
-
-
 =head2 method_metaclass
 
 Wraps the normal method and ensures that the method metaclass performs the
@@ -138,7 +127,17 @@ L<MooseX::MethodAttributes::Role::Meta::Method> role, which allows you to
 introspect the attributes from the method objects returned by the MOP when
 querying the metaclass.
 
+=head1 CAVEATS
 
+=over
+
+=item *
+
+Currently roles with attributes cannot have methods excluded
+or aliased, and will in turn confer this property onto any roles they
+are composed onto.
+
+=back
 
 =head1 AUTHORS
 
@@ -152,6 +151,5 @@ This software is copyright (c) 2010 by Florian Ragwitz.
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
+=cut
 

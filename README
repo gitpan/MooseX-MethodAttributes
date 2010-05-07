@@ -1,7 +1,7 @@
 
 
-This archive contains the distribution MooseX-MethodAttributes, version
-0.20:
+This archive contains the distribution MooseX-MethodAttributes,
+version 0.21:
 
   code attribute introspection
 
@@ -9,4 +9,5 @@ This software is copyright (c) 2010 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
+
 

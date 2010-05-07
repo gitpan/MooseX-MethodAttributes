@@ -1,9 +1,14 @@
 package MooseX::MethodAttributes::Role::Meta::Map;
-our $VERSION = '0.20';
+BEGIN {
+  $MooseX::MethodAttributes::Role::Meta::Map::AUTHORITY = 'cpan:FLORA';
+}
+BEGIN {
+  $MooseX::MethodAttributes::Role::Meta::Map::VERSION = '0.21';
+}
 # ABSTRACT: generic role for storing code attributes used by classes and roles with attributes
 
 use Moose::Role;
-use MooseX::Types::Moose qw/HashRef ArrayRef Str Int/;
+use MooseX::Types::Moose 0.20 qw/HashRef ArrayRef Str Int/;
 
 use namespace::clean -except => 'meta';
 
@@ -39,16 +44,11 @@ sub get_method_attributes {
 
 
 __END__
-
 =pod
 
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Map - generic role for storing code attributes used by classes and roles with attributes
-
-=head1 VERSION
-
-version 0.20
 
 =head1 METHODS
 
@@ -56,13 +56,9 @@ version 0.20
 
 Register a list of attributes for a code reference.
 
-
-
 =head2 get_method_attributes ($code)
 
 Get a list of attributes associated with a coderef.
-
-
 
 =head1 AUTHORS
 
@@ -76,6 +72,5 @@ This software is copyright (c) 2010 by Florian Ragwitz.
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
+=cut
 

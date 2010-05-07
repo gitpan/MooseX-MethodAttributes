@@ -1,5 +1,10 @@
 package MooseX::MethodAttributes::Role::Meta::Class;
-our $VERSION = '0.20';
+BEGIN {
+  $MooseX::MethodAttributes::Role::Meta::Class::AUTHORITY = 'cpan:FLORA';
+}
+BEGIN {
+  $MooseX::MethodAttributes::Role::Meta::Class::VERSION = '0.21';
+}
 # ABSTRACT: metaclass role for storing code attributes
 
 use Moose::Role;
@@ -31,7 +36,7 @@ sub get_method_with_attributes_list {
         exists $self->_method_attribute_map->{$addr}
         ? [$addr, $_]
         : ()
-    } grep { 
+    } grep {
         $_->can('_get_attributed_coderef')
     } @methods;
 }
@@ -89,16 +94,11 @@ foreach my $type (qw/after before around/) {
 
 
 __END__
-
 =pod
 
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Class - metaclass role for storing code attributes
-
-=head1 VERSION
-
-version 0.20
 
 =head1 METHODS
 
@@ -107,15 +107,11 @@ version 0.20
 Gets the list of meta methods for local methods of this class that have
 attributes in the order they have been registered.
 
-
-
 =head2 get_all_methods_with_attributes
 
 Gets the list of meta methods of local and inherited methods of this class,
 that have attributes. Baseclass methods come before subclass methods. Methods
 of one class have the order they have been declared in.
-
-
 
 =head2 get_nearest_methods_with_attributes
 
@@ -142,8 +138,6 @@ C<< BaseClass->meta->get_method('foo') >> for the above example, but
 this method will not, and will return the wrapped bar method, wheras
 C<< get_all_methods_with_attributes >> will return the original method.
 
-
-
 =head1 AUTHORS
 
   Florian Ragwitz <rafl@debian.org>
@@ -156,6 +150,5 @@ This software is copyright (c) 2010 by Florian Ragwitz.
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
+=cut
 

@@ -1,8 +1,10 @@
-use strict;
-use warnings;
-
 package MooseX::MethodAttributes::Role;
-our $VERSION = '0.20';
+BEGIN {
+  $MooseX::MethodAttributes::Role::AUTHORITY = 'cpan:FLORA';
+}
+BEGIN {
+  $MooseX::MethodAttributes::Role::VERSION = '0.21';
+}
 # ABSTRACT: code attribute introspection
 
 use Moose ();
@@ -42,16 +44,11 @@ sub init_meta {
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
 
 MooseX::MethodAttributes::Role - code attribute introspection
-
-=head1 VERSION
-
-version 0.20
 
 =head1 SYNOPSIS
 
@@ -67,13 +64,7 @@ version 0.20
 This module allows you to write a Moose Role with code attributes of methods to
 be introspected using Moose meta method objects.
 
-=begin Pod::Coverage
-
-init_meta
-
-=end Pod::Coverage
-
-
+=for Pod::Coverage init_meta
 
 =head1 AUTHORS
 
@@ -87,6 +78,5 @@ This software is copyright (c) 2010 by Florian Ragwitz.
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
+=cut
 
