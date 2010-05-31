@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::VERSION = '0.21';
+  $MooseX::MethodAttributes::VERSION = '0.22';
 }
 # ABSTRACT: code attribute introspection
 
@@ -20,7 +20,7 @@ Moose::Exporter->setup_import_methods;
 sub init_meta {
     my ($class, %options) = @_;
 
-	my $for_class = $options{for_class};
+    my $for_class = $options{for_class};
     my $meta = find_meta($for_class);
 
     return $meta if $meta
@@ -38,8 +38,8 @@ sub init_meta {
         wrapped_method_metaclass_roles => ['MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped'],
     );
 
-	$for_class = $meta->name;
-	Moose::Util::MetaRole::apply_base_class_roles(
+    $for_class = $meta->name;
+    Moose::Util::MetaRole::apply_base_class_roles(
         for_class => $for_class,
         roles     => ['MooseX::MethodAttributes::Role::AttrContainer'],
     );

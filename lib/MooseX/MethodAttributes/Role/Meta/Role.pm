@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Role::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::Meta::Role::VERSION = '0.21';
+  $MooseX::MethodAttributes::Role::Meta::Role::VERSION = '0.22';
 }
 # ABSTRACT: metarole role for storing code attributes
 
@@ -74,7 +74,7 @@ BEGIN {
   $Moose::Meta::Role::Custom::Trait::MethodAttributes::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $Moose::Meta::Role::Custom::Trait::MethodAttributes::VERSION = '0.21';
+  $Moose::Meta::Role::Custom::Trait::MethodAttributes::VERSION = '0.22';
 }
 
 sub register_implementation { 'MooseX::MethodAttributes::Role::Meta::Role' }

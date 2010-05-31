@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::VERSION = '0.21';
+  $MooseX::MethodAttributes::Role::VERSION = '0.22';
 }
 # ABSTRACT: code attribute introspection
 
@@ -20,7 +20,7 @@ Moose::Exporter->setup_import_methods( also => 'Moose::Role' );
 sub init_meta {
     my ($class, %options) = @_;
 
-	my $for_class = $options{for_class};
+    my $for_class = $options{for_class};
     my $meta = find_meta($for_class);
 
     return $meta if $meta

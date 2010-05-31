@@ -42,10 +42,13 @@ t/multiple_roles.t
 t/multiple_roles_astrait.t
 t/override_method_with_no_attribute.t
 t/param_role.t
+t/release-eol.t
+t/release-no_tabs.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
 t/role.t
 t/role_applied.t
+t/role_comp.t
 t/role_in_role.t
 t/role_in_role_more.t
 t/role_method_conflict_detection.t

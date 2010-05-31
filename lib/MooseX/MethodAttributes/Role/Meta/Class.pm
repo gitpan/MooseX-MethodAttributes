@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Class::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::Meta::Class::VERSION = '0.21';
+  $MooseX::MethodAttributes::Role::Meta::Class::VERSION = '0.22';
 }
 # ABSTRACT: metaclass role for storing code attributes
 
@@ -74,9 +74,6 @@ foreach my $type (qw/after before around/) {
         my $orig = shift;
         my $meta = shift;
         my ($method_name) = @_;
-
-		# Ensure the correct metaclass
-        $meta = MooseX::MethodAttributes->init_meta( for_class => $meta->name );
 
         my $code = $meta->$orig(@_);
         my $method = $meta->get_method($method_name);
