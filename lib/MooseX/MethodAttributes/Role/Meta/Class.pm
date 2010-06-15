@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Class::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::Meta::Class::VERSION = '0.22';
+  $MooseX::MethodAttributes::Role::Meta::Class::VERSION = '0.23';
 }
 # ABSTRACT: metaclass role for storing code attributes
 
@@ -93,6 +93,8 @@ foreach my $type (qw/after before around/) {
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Class - metaclass role for storing code attributes
@@ -130,15 +132,24 @@ For example, given:
 
     after bar => sub {}
 
-C<< SubClass->meta->get_all_methods_with_attributes >> will return 
+C<< SubClass->meta->get_all_methods_with_attributes >> will return
 C<< BaseClass->meta->get_method('foo') >> for the above example, but
 this method will not, and will return the wrapped bar method, wheras
 C<< get_all_methods_with_attributes >> will return the original method.
 
 =head1 AUTHORS
 
-  Florian Ragwitz <rafl@debian.org>
-  Tomas Doran <bobtfish@bobtfish.net>
+=over 4
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

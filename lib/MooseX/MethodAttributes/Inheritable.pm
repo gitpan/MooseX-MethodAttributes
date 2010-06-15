@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Inheritable::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Inheritable::VERSION = '0.22';
+  $MooseX::MethodAttributes::Inheritable::VERSION = '0.23';
 }
 # ABSTRACT: inheritable code attribute introspection
 
@@ -22,6 +22,8 @@ __PACKAGE__->meta->make_immutable;
 
 __END__
 =pod
+
+=encoding utf-8
 
 =head1 NAME
 
@@ -47,8 +49,17 @@ their code attributes captured.
 
 =head1 AUTHORS
 
-  Florian Ragwitz <rafl@debian.org>
-  Tomas Doran <bobtfish@bobtfish.net>
+=over 4
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

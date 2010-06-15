@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Role::Application::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::Meta::Role::Application::VERSION = '0.22';
+  $MooseX::MethodAttributes::Role::Meta::Role::Application::VERSION = '0.23';
 }
 # ABSTRACT: generic role for applying a role with method attributes to something
 
@@ -54,6 +54,8 @@ sub _apply_metaclasses {
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Role::Application - generic role for applying a role with method attributes to something
@@ -69,8 +71,17 @@ the role are copied to the target class.
 
 =head1 AUTHORS
 
-  Florian Ragwitz <rafl@debian.org>
-  Tomas Doran <bobtfish@bobtfish.net>
+=over 4
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

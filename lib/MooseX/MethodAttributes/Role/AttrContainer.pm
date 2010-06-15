@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::AttrContainer::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::AttrContainer::VERSION = '0.22';
+  $MooseX::MethodAttributes::Role::AttrContainer::VERSION = '0.23';
 }
 # ABSTRACT: capture code attributes in the class' metaclass
 
@@ -24,6 +24,8 @@ sub MODIFY_CODE_ATTRIBUTES {
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::AttrContainer - capture code attributes in the class' metaclass
@@ -38,8 +40,17 @@ See L<attributes>.
 
 =head1 AUTHORS
 
-  Florian Ragwitz <rafl@debian.org>
-  Tomas Doran <bobtfish@bobtfish.net>
+=over 4
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

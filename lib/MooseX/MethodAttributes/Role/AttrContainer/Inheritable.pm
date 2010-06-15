@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::AttrContainer::Inheritable::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::AttrContainer::Inheritable::VERSION = '0.22';
+  $MooseX::MethodAttributes::Role::AttrContainer::Inheritable::VERSION = '0.23';
 }
 # ABSTRACT: capture code attributes in the automatically initialized metaclass instance
 
@@ -27,6 +27,8 @@ before MODIFY_CODE_ATTRIBUTES => sub {
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::AttrContainer::Inheritable - capture code attributes in the automatically initialized metaclass instance
@@ -39,8 +41,17 @@ applying the meta roles relevant for capturing method attributes.
 
 =head1 AUTHORS
 
-  Florian Ragwitz <rafl@debian.org>
-  Tomas Doran <bobtfish@bobtfish.net>
+=over 4
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

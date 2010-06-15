@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Map::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::Meta::Map::VERSION = '0.22';
+  $MooseX::MethodAttributes::Role::Meta::Map::VERSION = '0.23';
 }
 # ABSTRACT: generic role for storing code attributes used by classes and roles with attributes
 
@@ -46,6 +46,8 @@ sub get_method_attributes {
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Map - generic role for storing code attributes used by classes and roles with attributes
@@ -62,8 +64,17 @@ Get a list of attributes associated with a coderef.
 
 =head1 AUTHORS
 
-  Florian Ragwitz <rafl@debian.org>
-  Tomas Doran <bobtfish@bobtfish.net>
+=over 4
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

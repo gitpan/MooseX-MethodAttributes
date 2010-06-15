@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Method::Wrapped::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::Meta::Method::Wrapped::VERSION = '0.22';
+  $MooseX::MethodAttributes::Role::Meta::Method::Wrapped::VERSION = '0.23';
 }
 # ABSTRACT: wrapped metamethod role allowing code attribute introspection
 
@@ -27,6 +27,8 @@ sub _get_attributed_coderef {
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Method::Wrapped - wrapped metamethod role allowing code attribute introspection
@@ -39,8 +41,17 @@ Gets the list of code attributes of the original method this meta method wraps.
 
 =head1 AUTHORS
 
-  Florian Ragwitz <rafl@debian.org>
-  Tomas Doran <bobtfish@bobtfish.net>
+=over 4
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

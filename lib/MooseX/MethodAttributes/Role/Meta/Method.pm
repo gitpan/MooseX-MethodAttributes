@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Method::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::Meta::Method::VERSION = '0.22';
+  $MooseX::MethodAttributes::Role::Meta::Method::VERSION = '0.23';
 }
 # ABSTRACT: metamethod role allowing code attribute introspection
 
@@ -34,6 +34,8 @@ sub _get_attributed_coderef {
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Method - metamethod role allowing code attribute introspection
@@ -53,8 +55,17 @@ captured in the associated meta class.
 
 =head1 AUTHORS
 
-  Florian Ragwitz <rafl@debian.org>
-  Tomas Doran <bobtfish@bobtfish.net>
+=over 4
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

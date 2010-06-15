@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Role::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::Meta::Role::VERSION = '0.22';
+  $MooseX::MethodAttributes::Role::Meta::Role::VERSION = '0.23';
 }
 # ABSTRACT: metarole role for storing code attributes
 
@@ -74,7 +74,7 @@ BEGIN {
   $Moose::Meta::Role::Custom::Trait::MethodAttributes::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $Moose::Meta::Role::Custom::Trait::MethodAttributes::VERSION = '0.22';
+  $Moose::Meta::Role::Custom::Trait::MethodAttributes::VERSION = '0.23';
 }
 
 sub register_implementation { 'MooseX::MethodAttributes::Role::Meta::Role' }
@@ -85,6 +85,8 @@ sub register_implementation { 'MooseX::MethodAttributes::Role::Meta::Role' }
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Role - metarole role for storing code attributes
@@ -93,7 +95,7 @@ MooseX::MethodAttributes::Role::Meta::Role - metarole role for storing code attr
 
     package MyRole;
     use MooseX::MethodAttributes::Role;
-    
+
     sub foo : Bar Baz('corge') { ... }
 
     package MyClass
@@ -141,8 +143,17 @@ are composed onto.
 
 =head1 AUTHORS
 
-  Florian Ragwitz <rafl@debian.org>
-  Tomas Doran <bobtfish@bobtfish.net>
+=over 4
+
+=item *
+
+Florian Ragwitz <rafl@debian.org>
+
+=item *
+
+Tomas Doran <bobtfish@bobtfish.net>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
