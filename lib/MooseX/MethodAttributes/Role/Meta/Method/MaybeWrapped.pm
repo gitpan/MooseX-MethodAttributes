@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped::VERSION = '0.23';
+  $MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped::VERSION = '0.24';
 }
 # ABSTRACT: proxy attributes of wrapped methods if their metaclass supports it
 

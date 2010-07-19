@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::AttrContainer::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::AttrContainer::VERSION = '0.23';
+  $MooseX::MethodAttributes::Role::AttrContainer::VERSION = '0.24';
 }
 # ABSTRACT: capture code attributes in the class' metaclass
 

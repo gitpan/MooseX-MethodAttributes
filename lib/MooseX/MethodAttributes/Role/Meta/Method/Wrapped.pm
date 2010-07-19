@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Method::Wrapped::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::Meta::Method::Wrapped::VERSION = '0.23';
+  $MooseX::MethodAttributes::Role::Meta::Method::Wrapped::VERSION = '0.24';
 }
 # ABSTRACT: wrapped metamethod role allowing code attribute introspection
 

@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Class::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::Meta::Class::VERSION = '0.23';
+  $MooseX::MethodAttributes::Role::Meta::Class::VERSION = '0.24';
 }
 # ABSTRACT: metaclass role for storing code attributes
 
