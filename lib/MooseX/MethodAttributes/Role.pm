@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::VERSION = '0.24';
+  $MooseX::MethodAttributes::Role::VERSION = '0.25';
 }
 # ABSTRACT: code attribute introspection
 
@@ -26,7 +26,7 @@ sub init_meta {
     return $meta if $meta
         && does_role($meta, 'MooseX::MethodAttributes::Role::Meta::Role');
 
-    $meta = Moose::Meta::Role->initialize( $for_class )
+    $meta = Moose::Meta::Role->create( $for_class )
         unless $meta;
 
     $meta = Moose::Util::MetaRole::apply_metaroles(
@@ -86,7 +86,7 @@ Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Florian Ragwitz.
+This software is copyright (c) 2011 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Role::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $MooseX::MethodAttributes::Role::Meta::Role::VERSION = '0.24';
+  $MooseX::MethodAttributes::Role::Meta::Role::VERSION = '0.25';
 }
 # ABSTRACT: metarole role for storing code attributes
 
@@ -70,12 +70,6 @@ sub _copy_attributes {
 # is now only present for backwards compatibility reasons.
 package # Hide from PAUSE
     Moose::Meta::Role::Custom::Trait::MethodAttributes;
-BEGIN {
-  $Moose::Meta::Role::Custom::Trait::MethodAttributes::AUTHORITY = 'cpan:FLORA';
-}
-BEGIN {
-  $Moose::Meta::Role::Custom::Trait::MethodAttributes::VERSION = '0.24';
-}
 
 sub register_implementation { 'MooseX::MethodAttributes::Role::Meta::Role' }
 
@@ -157,7 +151,7 @@ Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Florian Ragwitz.
+This software is copyright (c) 2011 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
