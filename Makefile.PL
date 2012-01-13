@@ -9,28 +9,28 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'code attribute introspection',
-  'AUTHOR' => 'Florian Ragwitz <rafl@debian.org>, Tomas Doran <bobtfish@bobtfish.net>',
-  'BUILD_REQUIRES' => {
-    'Test::Exception' => '0',
-    'Test::More' => '0.88',
-    'namespace::autoclean' => '0'
+  "ABSTRACT" => "code attribute introspection",
+  "AUTHOR" => "Florian Ragwitz <rafl\@debian.org>, Tomas Doran <bobtfish\@bobtfish.net>",
+  "BUILD_REQUIRES" => {
+    "Test::Exception" => 0,
+    "Test::More" => "0.88",
+    "namespace::autoclean" => 0
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.30'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'MooseX-MethodAttributes',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'MooseX::MethodAttributes',
-  'PREREQ_PM' => {
-    'Moose' => '0.98',
-    'MooseX::Types::Moose' => '0.21',
-    'namespace::clean' => '0.10'
+  "DISTNAME" => "MooseX-MethodAttributes",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "MooseX::MethodAttributes",
+  "PREREQ_PM" => {
+    "Moose" => "0.98",
+    "MooseX::Types::Moose" => "0.21",
+    "namespace::clean" => "0.10"
   },
-  'VERSION' => '0.25',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.26",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 

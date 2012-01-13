@@ -2,8 +2,8 @@ package MooseX::MethodAttributes;
 BEGIN {
   $MooseX::MethodAttributes::AUTHORITY = 'cpan:FLORA';
 }
-BEGIN {
-  $MooseX::MethodAttributes::VERSION = '0.25';
+{
+  $MooseX::MethodAttributes::VERSION = '0.26';
 }
 # ABSTRACT: code attribute introspection
 
@@ -94,7 +94,7 @@ Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Florian Ragwitz.
+This software is copyright (c) 2012 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

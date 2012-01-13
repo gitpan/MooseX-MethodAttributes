@@ -2,8 +2,8 @@ package MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped;
 BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped::AUTHORITY = 'cpan:FLORA';
 }
-BEGIN {
-  $MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped::VERSION = '0.25';
+{
+  $MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped::VERSION = '0.26';
 }
 # ABSTRACT: proxy attributes of wrapped methods if their metaclass supports it
 
@@ -52,7 +52,7 @@ Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Florian Ragwitz.
+This software is copyright (c) 2012 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

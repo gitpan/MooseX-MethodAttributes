@@ -2,8 +2,8 @@ package MooseX::MethodAttributes::Inheritable;
 BEGIN {
   $MooseX::MethodAttributes::Inheritable::AUTHORITY = 'cpan:FLORA';
 }
-BEGIN {
-  $MooseX::MethodAttributes::Inheritable::VERSION = '0.25';
+{
+  $MooseX::MethodAttributes::Inheritable::VERSION = '0.26';
 }
 # ABSTRACT: inheritable code attribute introspection
 
@@ -18,6 +18,7 @@ use namespace::clean -except => 'meta';
 with 'MooseX::MethodAttributes::Role::AttrContainer::Inheritable';
 
 __PACKAGE__->meta->make_immutable;
+1;
 
 
 __END__
@@ -63,7 +64,7 @@ Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Florian Ragwitz.
+This software is copyright (c) 2012 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
