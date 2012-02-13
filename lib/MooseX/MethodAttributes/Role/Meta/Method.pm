@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Method::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Role::Meta::Method::VERSION = '0.26';
+  $MooseX::MethodAttributes::Role::Meta::Method::VERSION = '0.27';
 }
 # ABSTRACT: metamethod role allowing code attribute introspection
 

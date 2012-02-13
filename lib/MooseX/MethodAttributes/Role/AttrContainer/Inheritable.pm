@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::AttrContainer::Inheritable::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Role::AttrContainer::Inheritable::VERSION = '0.26';
+  $MooseX::MethodAttributes::Role::AttrContainer::Inheritable::VERSION = '0.27';
 }
 # ABSTRACT: capture code attributes in the automatically initialized metaclass instance
 

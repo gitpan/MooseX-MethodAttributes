@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Role::Application::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Role::Meta::Role::Application::VERSION = '0.26';
+  $MooseX::MethodAttributes::Role::Meta::Role::Application::VERSION = '0.27';
 }
 # ABSTRACT: generic role for applying a role with method attributes to something
 

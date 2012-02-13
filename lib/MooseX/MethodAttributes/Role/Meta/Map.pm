@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Map::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Role::Meta::Map::VERSION = '0.26';
+  $MooseX::MethodAttributes::Role::Meta::Map::VERSION = '0.27';
 }
 # ABSTRACT: generic role for storing code attributes used by classes and roles with attributes
 

@@ -29,6 +29,9 @@ t/inherited.t
 t/inherited_non_moose_multilevel.t
 t/late_reinitialize.t
 t/lib/BaseClass.pm
+t/lib/CatalystLike/Controller.pm
+t/lib/CatalystLike/Controller/Moose.pm
+t/lib/CatalystLike/Controller/Moose/MethodModifiers.pm
 t/lib/ClassUsingRoleWithAttributes.pm
 t/lib/OtherRoleWithAttributes.pm
 t/lib/OtherSubClass.pm

@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Role::VERSION = '0.26';
+  $MooseX::MethodAttributes::Role::VERSION = '0.27';
 }
 # ABSTRACT: code attribute introspection
 

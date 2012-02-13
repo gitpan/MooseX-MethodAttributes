@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::VERSION = '0.26';
+  $MooseX::MethodAttributes::VERSION = '0.27';
 }
 # ABSTRACT: code attribute introspection
 
@@ -15,7 +15,9 @@ use Moose::Util qw/find_meta does_role/;
 use MooseX::MethodAttributes::Role::Meta::Role ();
 
 
-Moose::Exporter->setup_import_methods;
+Moose::Exporter->setup_import_methods(
+    also => 'Moose',
+);
 
 sub init_meta {
     my ($class, %options) = @_;

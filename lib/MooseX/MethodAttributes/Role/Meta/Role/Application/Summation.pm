@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Role::Application::Summation::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Role::Meta::Role::Application::Summation::VERSION = '0.26';
+  $MooseX::MethodAttributes::Role::Meta::Role::Application::Summation::VERSION = '0.27';
 }
 # ABSTRACT: Role applied to the class responsible for role summation which ensures method attributes propagate from the roles being summed onto the combined role.
 

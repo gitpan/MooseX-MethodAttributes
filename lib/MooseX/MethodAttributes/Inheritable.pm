@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Inheritable::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Inheritable::VERSION = '0.26';
+  $MooseX::MethodAttributes::Inheritable::VERSION = '0.27';
 }
 # ABSTRACT: inheritable code attribute introspection
 
