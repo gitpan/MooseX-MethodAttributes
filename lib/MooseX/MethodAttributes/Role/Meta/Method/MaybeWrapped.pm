@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped::VERSION = '0.27';
+  $MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped::VERSION = '0.28';
 }
 # ABSTRACT: proxy attributes of wrapped methods if their metaclass supports it
 
@@ -28,6 +28,7 @@ override wrap => sub {
 1;
 
 __END__
+
 =pod
 
 =encoding utf-8
@@ -58,4 +59,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Role::VERSION = '0.27';
+  $MooseX::MethodAttributes::Role::VERSION = '0.28';
 }
 # ABSTRACT: code attribute introspection
 
@@ -46,6 +46,7 @@ sub init_meta {
 1;
 
 __END__
+
 =pod
 
 =encoding utf-8
@@ -92,4 +93,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

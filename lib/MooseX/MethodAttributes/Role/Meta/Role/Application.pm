@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Role::Application::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Role::Meta::Role::Application::VERSION = '0.27';
+  $MooseX::MethodAttributes::Role::Meta::Role::Application::VERSION = '0.28';
 }
 # ABSTRACT: generic role for applying a role with method attributes to something
 
@@ -11,6 +11,7 @@ use Moose::Role;
 use Moose::Util qw/find_meta/;
 use MooseX::MethodAttributes ();
 use MooseX::MethodAttributes::Role ();
+use Carp qw/croak/;
 use namespace::clean -except => 'meta';
 
 requires qw/
@@ -52,6 +53,7 @@ sub _apply_metaclasses {
 1;
 
 __END__
+
 =pod
 
 =encoding utf-8
@@ -91,4 +93,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

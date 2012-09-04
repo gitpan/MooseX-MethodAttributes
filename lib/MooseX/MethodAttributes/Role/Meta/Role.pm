@@ -3,14 +3,13 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Role::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Role::Meta::Role::VERSION = '0.27';
+  $MooseX::MethodAttributes::Role::Meta::Role::VERSION = '0.28';
 }
 # ABSTRACT: metarole role for storing code attributes
 
 use Moose ();
 use Moose::Util::MetaRole;
 use Moose::Util qw/find_meta does_role ensure_all_roles/;
-use Carp qw/croak/;
 
 use Moose::Role;
 
@@ -75,8 +74,8 @@ sub register_implementation { 'MooseX::MethodAttributes::Role::Meta::Role' }
 
 1;
 
-
 __END__
+
 =pod
 
 =encoding utf-8
@@ -157,4 +156,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

@@ -1,10 +1,12 @@
 Changes
+INSTALL
 LICENSE
 MANIFEST
 META.json
 META.yml
 Makefile.PL
 README
+README.md
 dist.ini
 lib/MooseX/MethodAttributes.pm
 lib/MooseX/MethodAttributes/Inheritable.pm
@@ -19,6 +21,8 @@ lib/MooseX/MethodAttributes/Role/Meta/Method/Wrapped.pm
 lib/MooseX/MethodAttributes/Role/Meta/Role.pm
 lib/MooseX/MethodAttributes/Role/Meta/Role/Application.pm
 lib/MooseX/MethodAttributes/Role/Meta/Role/Application/Summation.pm
+t/00-check-deps.t
+t/00-compile.t
 t/basic.t
 t/calling.t
 t/catalyst.t
@@ -45,9 +49,15 @@ t/multiple_roles.t
 t/multiple_roles_astrait.t
 t/override_method_with_no_attribute.t
 t/param_role.t
+t/release-changes_has_content.t
+t/release-cpan-changes.t
+t/release-distmeta.t
 t/release-eol.t
+t/release-minimum-version.t
 t/release-no-tabs.t
 t/release-pod-coverage.t
+t/release-pod-linkcheck.t
+t/release-pod-no404s.t
 t/release-pod-syntax.t
 t/role.t
 t/role_applied.t

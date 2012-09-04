@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Method::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Role::Meta::Method::VERSION = '0.27';
+  $MooseX::MethodAttributes::Role::Meta::Method::VERSION = '0.28';
 }
 # ABSTRACT: metamethod role allowing code attribute introspection
 
@@ -32,6 +32,7 @@ sub _get_attributed_coderef {
 1;
 
 __END__
+
 =pod
 
 =encoding utf-8
@@ -75,4 +76,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

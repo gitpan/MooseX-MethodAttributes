@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-
+use 5.006;
 
 use ExtUtils::MakeMaker 6.30;
 
@@ -12,6 +12,7 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "code attribute introspection",
   "AUTHOR" => "Florian Ragwitz <rafl\@debian.org>, Tomas Doran <bobtfish\@bobtfish.net>",
   "BUILD_REQUIRES" => {
+    "Test::CheckDeps" => "0.002",
     "Test::Exception" => 0,
     "Test::More" => "0.88",
     "namespace::autoclean" => 0
@@ -28,7 +29,7 @@ my %WriteMakefileArgs = (
     "MooseX::Types::Moose" => "0.21",
     "namespace::clean" => "0.10"
   },
-  "VERSION" => "0.27",
+  "VERSION" => "0.28",
   "test" => {
     "TESTS" => "t/*.t"
   }

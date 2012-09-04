@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Role::Application::Summation::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Role::Meta::Role::Application::Summation::VERSION = '0.27';
+  $MooseX::MethodAttributes::Role::Meta::Role::Application::Summation::VERSION = '0.28';
 }
 # ABSTRACT: Role applied to the class responsible for role summation which ensures method attributes propagate from the roles being summed onto the combined role.
 
@@ -24,6 +24,7 @@ sub _copy_attributes {
 1;
 
 __END__
+
 =pod
 
 =encoding utf-8
@@ -54,4 +55,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

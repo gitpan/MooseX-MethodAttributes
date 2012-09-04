@@ -3,7 +3,7 @@ BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Map::AUTHORITY = 'cpan:FLORA';
 }
 {
-  $MooseX::MethodAttributes::Role::Meta::Map::VERSION = '0.27';
+  $MooseX::MethodAttributes::Role::Meta::Map::VERSION = '0.28';
 }
 # ABSTRACT: generic role for storing code attributes used by classes and roles with attributes
 
@@ -42,8 +42,8 @@ sub get_method_attributes {
 
 1;
 
-
 __END__
+
 =pod
 
 =encoding utf-8
@@ -84,4 +84,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
