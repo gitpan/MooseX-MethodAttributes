@@ -1,9 +1,9 @@
 package MooseX::MethodAttributes::Inheritable;
+{
+  $MooseX::MethodAttributes::Inheritable::VERSION = '0.29';
+}
 BEGIN {
   $MooseX::MethodAttributes::Inheritable::AUTHORITY = 'cpan:FLORA';
-}
-{
-  $MooseX::MethodAttributes::Inheritable::VERSION = '0.28';
 }
 # ABSTRACT: inheritable code attribute introspection
 
@@ -13,7 +13,7 @@ use MooseX::MethodAttributes::Role::Meta::Role ();
 
 use Moose;
 
-use namespace::clean -except => 'meta';
+use namespace::autoclean;
 
 with 'MooseX::MethodAttributes::Role::AttrContainer::Inheritable';
 
@@ -24,11 +24,17 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
+
+=for :stopwords Florian Ragwitz Tomas Doran
 
 =head1 NAME
 
 MooseX::MethodAttributes::Inheritable - inheritable code attribute introspection
+
+=head1 VERSION
+
+version 0.29
 
 =head1 SYNOPSIS
 
@@ -48,6 +54,9 @@ This module does the same as C<MooseX::MethodAttributes>, except that classes
 inheriting from other classes using it don't need to do anything special to get
 their code attributes captured.
 
+Note that instead of inheriting from this module, you can instead simply
+compose (C<with>) the L<MooseX::MethodAttributes::Role::AttrContainer::Inheritable> role.
+
 =head1 AUTHORS
 
 =over 4
@@ -64,7 +73,7 @@ Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Florian Ragwitz.
+This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,16 +1,16 @@
 package MooseX::MethodAttributes::Role::AttrContainer;
+{
+  $MooseX::MethodAttributes::Role::AttrContainer::VERSION = '0.29';
+}
 BEGIN {
   $MooseX::MethodAttributes::Role::AttrContainer::AUTHORITY = 'cpan:FLORA';
-}
-{
-  $MooseX::MethodAttributes::Role::AttrContainer::VERSION = '0.28';
 }
 # ABSTRACT: capture code attributes in the class' metaclass
 
 use Moose::Role;
 use Moose::Util qw/find_meta/;
 
-use namespace::clean -except => 'meta';
+use namespace::autoclean;
 
 
 sub MODIFY_CODE_ATTRIBUTES {
@@ -25,11 +25,18 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
+
+=for :stopwords Florian Ragwitz Tomas Doran Dave Karman (t0m) Rolsky David Steinbrunner
+Karen Etheridge Marcus Ramberg Peter E
 
 =head1 NAME
 
 MooseX::MethodAttributes::Role::AttrContainer - capture code attributes in the class' metaclass
+
+=head1 VERSION
+
+version 0.29
 
 =head1 METHODS
 
@@ -55,7 +62,7 @@ Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Florian Ragwitz.
+This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

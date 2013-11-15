@@ -1,15 +1,15 @@
 package MooseX::MethodAttributes::Role::Meta::Role::Application::Summation;
+{
+  $MooseX::MethodAttributes::Role::Meta::Role::Application::Summation::VERSION = '0.29';
+}
 BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Role::Application::Summation::AUTHORITY = 'cpan:FLORA';
-}
-{
-  $MooseX::MethodAttributes::Role::Meta::Role::Application::Summation::VERSION = '0.28';
 }
 # ABSTRACT: Role applied to the class responsible for role summation which ensures method attributes propagate from the roles being summed onto the combined role.
 
 use Moose::Role;
 use Moose::Util qw/does_role/;
-use namespace::clean -except => 'meta';
+use namespace::autoclean;
 
 with 'MooseX::MethodAttributes::Role::Meta::Role::Application';
 
@@ -27,11 +27,18 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
+
+=for :stopwords Florian Ragwitz Tomas Doran Dave Karman (t0m) Rolsky David Steinbrunner
+Karen Etheridge Marcus Ramberg Peter E
 
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Role::Application::Summation - Role applied to the class responsible for role summation which ensures method attributes propagate from the roles being summed onto the combined role.
+
+=head1 VERSION
+
+version 0.29
 
 =head1 AUTHORS
 
@@ -49,7 +56,7 @@ Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Florian Ragwitz.
+This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

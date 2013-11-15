@@ -2,6 +2,10 @@
 
 MooseX::MethodAttributes - code attribute introspection
 
+# VERSION
+
+version 0.29
+
 # SYNOPSIS
 
     package MyClass;
@@ -25,7 +29,16 @@ meta method objects.
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Florian Ragwitz.
+This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
+
+# CONTRIBUTORS
+
+- Dave Rolsky <autarch@urth.org>
+- David Steinbrunner <dsteinbrunner@pobox.com>
+- Karen Etheridge <ether@cpan.org>
+- Marcus Ramberg <marcus@nordaaker.com>
+- Peter E Karman <pek@dewpoint.msi.umn.edu>
+- Tomas Doran (t0m) <bobtfish@bobtfish.net>

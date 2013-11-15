@@ -1,16 +1,16 @@
 package MooseX::MethodAttributes::Role::Meta::Class;
+{
+  $MooseX::MethodAttributes::Role::Meta::Class::VERSION = '0.29';
+}
 BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Class::AUTHORITY = 'cpan:FLORA';
-}
-{
-  $MooseX::MethodAttributes::Role::Meta::Class::VERSION = '0.28';
 }
 # ABSTRACT: metaclass role for storing code attributes
 
 use Moose::Role;
 use Moose::Util qw/find_meta does_role/;
 
-use namespace::clean -except => 'meta';
+use namespace::autoclean;
 
 with qw/
     MooseX::MethodAttributes::Role::Meta::Map
@@ -93,11 +93,17 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
+
+=for :stopwords Florian Ragwitz Tomas Doran
 
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Class - metaclass role for storing code attributes
+
+=head1 VERSION
+
+version 0.29
 
 =head1 METHODS
 
@@ -109,13 +115,13 @@ attributes in the order they have been registered.
 =head2 get_all_methods_with_attributes
 
 Gets the list of meta methods of local and inherited methods of this class,
-that have attributes. Baseclass methods come before subclass methods. Methods
+that have attributes. Base class methods come before subclass methods. Methods
 of one class have the order they have been declared in.
 
 =head2 get_nearest_methods_with_attributes
 
 The same as get_all_methods_with_attributes, except that methods from parent classes
-are not included if there is an attributeless method in a child class.
+are not included if there is an attribute-less method in a child class.
 
 For example, given:
 
@@ -134,7 +140,7 @@ For example, given:
 
 C<< SubClass->meta->get_all_methods_with_attributes >> will return
 C<< BaseClass->meta->get_method('foo') >> for the above example, but
-this method will not, and will return the wrapped bar method, wheras
+this method will not, and will return the wrapped bar method, whereas
 C<< get_all_methods_with_attributes >> will return the original method.
 
 =head1 AUTHORS
@@ -153,7 +159,7 @@ Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Florian Ragwitz.
+This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

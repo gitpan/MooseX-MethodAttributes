@@ -3,14 +3,14 @@ use warnings;
 {
     package Catalyst::Controller;
     use Moose;
-    use namespace::clean -except => 'meta';
+    use namespace::autoclean;
     use MooseX::MethodAttributes;
-    BEGIN { extends 'MooseX::MethodAttributes::Inheritable'; }
+    with 'MooseX::MethodAttributes::Role::AttrContainer::Inheritable';
 }
 {
     package TestApp::ControllerRole;
     use Moose::Role -traits => 'MethodAttributes';
-    use namespace::clean -except => 'meta';
+    use namespace::autoclean;
 
     sub get_attribute : Local { $TestApp::Controller::Moose::GET_ATTRIBUTE_CALLED++ }
 
@@ -23,7 +23,7 @@ use warnings;
 {
     package TestApp::Controller::Moose;
     use Moose;
-    use namespace::clean -except => 'meta';
+    use namespace::autoclean;
     BEGIN { extends qw/Catalyst::Controller/; }
 
     our $GET_ATTRIBUTE_CALLED = 0;
@@ -35,7 +35,7 @@ use warnings;
 {
     package TestApp::Controller::Moose::MethodModifiers;
     use Moose;
-    use namespace::clean -except => 'meta';
+    use namespace::autoclean;
     BEGIN { extends qw/TestApp::Controller::Moose/; }
 
     our $GET_ATTRIBUTE_CALLED = 0;
@@ -46,7 +46,7 @@ use warnings;
 }
 
 use Test::More tests => 21;
-use Test::Exception;
+use Test::Fatal;
 
 {
     my $method = TestApp::Controller::Moose->meta->get_method('get_foo');
@@ -72,25 +72,29 @@ use Test::Exception;
 }
 
 my @methods;
-lives_ok {
+is exception {
     @methods = TestApp::Controller::Moose::MethodModifiers->meta->get_nearest_methods_with_attributes;
-} 'Can get nearest methods';
+}, undef, 'Can get nearest methods';
 
 is @methods, 3;
 
 my $method = (grep { $_->name eq 'get_attribute' } @methods)[0];
 ok $method;
-is eval { $method->body }, \&TestApp::Controller::Moose::MethodModifiers::get_attribute;
+is $method->body, \&TestApp::Controller::Moose::MethodModifiers::get_attribute;
 is $TestApp::Controller::Moose::GET_ATTRIBUTE_CALLED, 0;
 is $TestApp::Controller::Moose::MethodModifiers::GET_ATTRIBUTE_CALLED, 0;
 is $TestApp::Controller::Moose::GET_FOO_CALLED, 0;
 is $TestApp::Controller::Moose::BEFORE_GET_FOO_CALLED, 0;
 
-eval { $method->body->() };
-ok !$@ or warn $@;
+is
+    exception { $method->body->() },
+    undef,
+    'can call $method->body sub';
 
-eval { (grep { $_->name eq 'get_foo' } @methods)[0]->body->(); };
-ok !$@ or warn $@;
+is
+    exception { (grep { $_->name eq 'get_foo' } @methods)[0]->body->(); },
+    undef,
+    'can find get_foo method';
 
 is $TestApp::Controller::Moose::GET_ATTRIBUTE_CALLED, 1;
 is $TestApp::Controller::Moose::MethodModifiers::GET_ATTRIBUTE_CALLED, 1;

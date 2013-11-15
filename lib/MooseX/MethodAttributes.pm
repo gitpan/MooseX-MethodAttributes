@@ -1,11 +1,11 @@
 package MooseX::MethodAttributes;
-# git description: v0.27-5-g5bfa6f6
+{
+  $MooseX::MethodAttributes::VERSION = '0.29';
+}
+# git description: v0.28-17-g7c32d1f
 
 BEGIN {
   $MooseX::MethodAttributes::AUTHORITY = 'cpan:FLORA';
-}
-{
-  $MooseX::MethodAttributes::VERSION = '0.28';
 }
 # ABSTRACT: code attribute introspection
 
@@ -59,11 +59,18 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
+
+=for :stopwords Florian Ragwitz Tomas Doran Dave Karman (t0m) Rolsky David Steinbrunner
+Karen Etheridge Marcus Ramberg Peter E
 
 =head1 NAME
 
 MooseX::MethodAttributes - code attribute introspection
+
+=head1 VERSION
+
+version 0.29
 
 =head1 SYNOPSIS
 
@@ -99,9 +106,39 @@ Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Florian Ragwitz.
+This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
+
+=head1 CONTRIBUTORS
+
+=over 4
+
+=item *
+
+Dave Rolsky <autarch@urth.org>
+
+=item *
+
+David Steinbrunner <dsteinbrunner@pobox.com>
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=item *
+
+Marcus Ramberg <marcus@nordaaker.com>
+
+=item *
+
+Peter E Karman <pek@dewpoint.msi.umn.edu>
+
+=item *
+
+Tomas Doran (t0m) <bobtfish@bobtfish.net>
+
+=back
 
 =cut

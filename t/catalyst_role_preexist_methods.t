@@ -4,15 +4,15 @@ use warnings;
 {
     package Catalyst::Controller;
     use Moose;
-    use namespace::clean -except => 'meta';
+    use namespace::autoclean;
     use MooseX::MethodAttributes;
-    BEGIN { extends 'MooseX::MethodAttributes::Inheritable'; }
+    with 'MooseX::MethodAttributes::Role::AttrContainer::Inheritable';
 }
 
 {
     package ControllerRole;
     use Moose::Role -traits => 'MethodAttributes';
-    use namespace::clean -except => 'meta';
+    use namespace::autoclean;
 
     sub not_attributed : Local {} # This method should _not_ get composed.
 }

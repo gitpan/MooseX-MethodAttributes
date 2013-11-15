@@ -1,15 +1,15 @@
 package MooseX::MethodAttributes::Role::Meta::Method::Wrapped;
+{
+  $MooseX::MethodAttributes::Role::Meta::Method::Wrapped::VERSION = '0.29';
+}
 BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Method::Wrapped::AUTHORITY = 'cpan:FLORA';
-}
-{
-  $MooseX::MethodAttributes::Role::Meta::Method::Wrapped::VERSION = '0.28';
 }
 # ABSTRACT: wrapped metamethod role allowing code attribute introspection
 
 use Moose::Role;
 
-use namespace::clean -except => 'meta';
+use namespace::autoclean;
 
 
 sub attributes {
@@ -28,11 +28,17 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
+
+=for :stopwords Florian Ragwitz Tomas Doran metamethod
 
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Method::Wrapped - wrapped metamethod role allowing code attribute introspection
+
+=head1 VERSION
+
+version 0.29
 
 =head1 METHODS
 
@@ -56,7 +62,7 @@ Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Florian Ragwitz.
+This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

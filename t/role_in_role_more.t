@@ -5,7 +5,7 @@ use MooseX::MethodAttributes ();
 {
     package Bar;
     use Moose::Role -traits => 'MethodAttributes';
-    use namespace::clean -except => 'meta';
+    use namespace::autoclean;
 
     sub item :Chained(/app/root) PathPrefix CaptureArgs(1) { }
 }
@@ -13,7 +13,7 @@ use MooseX::MethodAttributes ();
 {
     package Foo;
     use Moose::Role -traits => 'MethodAttributes';
-    use namespace::clean -except => 'meta';
+    use namespace::autoclean;
 
     with 'Bar';
 
@@ -25,15 +25,14 @@ use MooseX::MethodAttributes ();
 {
     package Catalyst::Controller;
     use Moose;
-    use namespace::clean -except => 'meta';
+    use namespace::autoclean;
 
-    BEGIN { extends qw/MooseX::MethodAttributes::Inheritable/; }
+    with 'MooseX::MethodAttributes::Role::AttrContainer::Inheritable';
 }
 
 use Test::More tests => 1;
 use Moose::Util;
 use Moose::Meta::Class;;
-use Data::Dumper;
 
 my @roles = qw/Foo/;
 
@@ -53,5 +52,5 @@ is_deeply \@methods, [
     'live :Chained(item)|PathPart|Args(0)',
     'other :Attr',
 ], 'methods with expected attributes found'
-    or warn Dumper(\@methods);
+    or diag explain(\@methods);
 

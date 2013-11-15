@@ -1,9 +1,9 @@
 package MooseX::MethodAttributes::Role::Meta::Role::Application;
+{
+  $MooseX::MethodAttributes::Role::Meta::Role::Application::VERSION = '0.29';
+}
 BEGIN {
   $MooseX::MethodAttributes::Role::Meta::Role::Application::AUTHORITY = 'cpan:FLORA';
-}
-{
-  $MooseX::MethodAttributes::Role::Meta::Role::Application::VERSION = '0.28';
 }
 # ABSTRACT: generic role for applying a role with method attributes to something
 
@@ -12,7 +12,7 @@ use Moose::Util qw/find_meta/;
 use MooseX::MethodAttributes ();
 use MooseX::MethodAttributes::Role ();
 use Carp qw/croak/;
-use namespace::clean -except => 'meta';
+use namespace::autoclean;
 
 requires qw/
     _copy_attributes
@@ -56,11 +56,17 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
+
+=for :stopwords Florian Ragwitz Tomas Doran
 
 =head1 NAME
 
 MooseX::MethodAttributes::Role::Meta::Role::Application - generic role for applying a role with method attributes to something
+
+=head1 VERSION
+
+version 0.29
 
 =head1 METHODS
 
@@ -87,7 +93,7 @@ Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Florian Ragwitz.
+This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,9 +1,9 @@
 package MooseX::MethodAttributes::Role::AttrContainer::Inheritable;
+{
+  $MooseX::MethodAttributes::Role::AttrContainer::Inheritable::VERSION = '0.29';
+}
 BEGIN {
   $MooseX::MethodAttributes::Role::AttrContainer::Inheritable::AUTHORITY = 'cpan:FLORA';
-}
-{
-  $MooseX::MethodAttributes::Role::AttrContainer::Inheritable::VERSION = '0.28';
 }
 # ABSTRACT: capture code attributes in the automatically initialized metaclass instance
 
@@ -11,7 +11,7 @@ BEGIN {
 use Moose::Role;
 use MooseX::MethodAttributes ();
 
-use namespace::clean -except => 'meta';
+use namespace::autoclean;
 
 with 'MooseX::MethodAttributes::Role::AttrContainer';
 
@@ -27,11 +27,17 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
+
+=for :stopwords Florian Ragwitz Tomas Doran
 
 =head1 NAME
 
 MooseX::MethodAttributes::Role::AttrContainer::Inheritable - capture code attributes in the automatically initialized metaclass instance
+
+=head1 VERSION
+
+version 0.29
 
 =head1 DESCRIPTION
 
@@ -55,7 +61,7 @@ Tomas Doran <bobtfish@bobtfish.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Florian Ragwitz.
+This software is copyright (c) 2009 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
